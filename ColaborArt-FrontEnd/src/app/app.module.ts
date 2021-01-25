@@ -11,6 +11,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { CadastrarArtistaComponent } from './cadastrar-artista/cadastrar-artista.component';
+import {HttpClientModule} from '@angular/common/http'
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { CadastrarArtistaComponent } from './cadastrar-artista/cadastrar-artista
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     HttpClientModule,
     FormsModule
   ],
