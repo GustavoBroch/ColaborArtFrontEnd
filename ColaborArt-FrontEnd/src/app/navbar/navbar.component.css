@@ -6,11 +6,28 @@
 
 #contato{
     font-weight: bold;
-    
 }
 
 #sobre-nos{
     font-weight: bold;
- 
 }
 
+#produtos{
+    font-weight: bold;
+}
+
+#ongs{
+    font-weight: bold;
+}
+
+#artistas{
+    font-weight: bold;
+}
+
+#usuario{
+    font-weight: bold;
+}
+
+.fs-16{
+    font-size: 16pt;
+}
