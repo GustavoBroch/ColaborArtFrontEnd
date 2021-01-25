@@ -29,7 +29,7 @@ alert('Senha Incorreta.')
 }else{
   this.authService.cadastrar(this.user).subscribe(( resp: User)=> {this.user = resp 
 
-    this.router.navigate(['/entrar']) /* confirmar nome da rota - login/logar ; entrar ; home ; etc */ 
+    this.router.navigate(['/logar']) /* confirmar nome da rota - login/logar ; entrar ; home ; etc */ 
   alert('Artista cadastrado com sucesso !')}
 
   ) 
