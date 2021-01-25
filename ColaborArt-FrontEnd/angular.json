@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "ColaborArt-FrontEnd"
+  "defaultProject": "ColaborArt-FrontEnd",
+  "cli": {
+    "analytics": "53c15867-9aa4-4682-a782-373695fd2bb8"
+  }
 }
