@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6" id="">
+    <div class="col-md-6" >
 
     </div>
     <div class="col-md-6 mb-5 mt-5">
@@ -10,13 +10,13 @@
 
           <form>
             <div class="form-group">
-              <label for="nome">Nome</label>
-              <input [(ngModel)]='user.nome' type="text" class="form-control" id="nome" name="nome" placeholder="Nome Completo">
+              <label for="nome">Nome:</label>
+              <input [(ngModel)]='user.nomeCompleto' type="text" class="form-control" id="nome" name="nome" placeholder="Nome Completo">
             </div>
 
             <div class="form-group">
               <label for="email">Email</label>
-              <input (input)='tipoUser($event)' [(ngModel)]='user.email' type="text" class="form-control" id="email" name="email" placeholder="Email">
+              <input [(ngModel)]='user.email' type="text" class="form-control" id="email" name="email" placeholder="Email">
             </div>
 
 
@@ -49,7 +49,7 @@
 
             <div class="form-group">
               <label for="foto">Foto do usuario</label>
-              <input [(ngModel)]='userLogin.foto' type="text" class="form-control" id="foto" name="foto" placeholder="link foto do usuario">
+              <input [(ngModel)]='user.foto' type="text" class="form-control" id="foto" name="foto" placeholder="link foto do usuario">
             </div>
 
             <div class="d-flex justify-content-center">
