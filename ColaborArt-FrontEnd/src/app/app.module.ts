@@ -14,7 +14,10 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { CadastrarArtistaComponent } from './cadastrar-artista/cadastrar-artista.component';
 import {HttpClientModule} from '@angular/common/http';
-import { InicioComponent } from './inicio/inicio.component'
+import { InicioComponent } from './inicio/inicio.component';
+import { CategoriaComponentComponent } from './categoria-component/categoria-component.component';
+import { CategoriaComponent } from './categoria/categoria.component';
+import { EditCategoriaComponent } from './edit-categoria/edit-categoria.component'
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { InicioComponent } from './inicio/inicio.component'
     EntrarComponent,
     CadastrarComponent,
     CadastrarArtistaComponent,
-    InicioComponent
+    InicioComponent,
+    CategoriaComponentComponent,
+    CategoriaComponent,
+    EditCategoriaComponent
   ],
   imports: [
     BrowserModule,
