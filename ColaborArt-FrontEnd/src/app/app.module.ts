@@ -7,12 +7,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { ContatoComponent } from './contato/contato.component';
-import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+
 
 
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { CadastrarArtistaComponent } from './cadastrar-artista/cadastrar-artista.component';
 import {HttpClientModule} from '@angular/common/http';
 import { InicioComponent } from './inicio/inicio.component';
 
@@ -24,10 +22,8 @@ import { InicioComponent } from './inicio/inicio.component';
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    ContatoComponent,
-    QuemSomosComponent,
     CadastrarComponent,
-    CadastrarArtistaComponent,
+  
     InicioComponent
   ],
   imports: [
