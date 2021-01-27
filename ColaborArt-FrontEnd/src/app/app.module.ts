@@ -18,7 +18,9 @@ import { InicioComponent } from './inicio/inicio.component';
 
 import { CategoriaComponent } from './categoria/categoria.component';
 import { EditCategoriaComponent } from './edit-categoria/edit-categoria.component';
-import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.component'
+import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component'
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.co
     InicioComponent,
     CategoriaComponent,
     EditCategoriaComponent,
-    ApagarCategoriaComponent
+    ApagarCategoriaComponent,
+    ProdutoComponent,
+    ProdutoEditComponent
   ],
   imports: [
     BrowserModule,
