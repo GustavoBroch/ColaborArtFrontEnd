@@ -10,9 +10,9 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarArtistaComponent implements OnInit {
 
-  user: User = new User;
+  user: User = new User
   confirmarSenha: string
-  tipoUsuario: string
+  
   constructor(private authService: AuthService,
     private router: Router) { }
 
