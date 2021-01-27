@@ -15,7 +15,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { CadastrarArtistaComponent } from './cadastrar-artista/cadastrar-artista.component';
 import {HttpClientModule} from '@angular/common/http';
 import { InicioComponent } from './inicio/inicio.component';
-import { CategoriaComponentComponent } from './categoria-component/categoria-component.component';
+
 import { CategoriaComponent } from './categoria/categoria.component';
 import { EditCategoriaComponent } from './edit-categoria/edit-categoria.component';
 import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.component'
@@ -33,7 +33,6 @@ import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.co
     CadastrarComponent,
     CadastrarArtistaComponent,
     InicioComponent,
-    CategoriaComponentComponent,
     CategoriaComponent,
     EditCategoriaComponent,
     ApagarCategoriaComponent
