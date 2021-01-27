@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContatoComponent } from './contato/contato.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
-import { EntrarComponent } from './entrar/entrar.component';
+
 
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { CadastrarArtistaComponent } from './cadastrar-artista/cadastrar-artista.component';
@@ -26,7 +26,6 @@ import { InicioComponent } from './inicio/inicio.component';
     FooterComponent,
     ContatoComponent,
     QuemSomosComponent,
-    EntrarComponent,
     CadastrarComponent,
     CadastrarArtistaComponent,
     InicioComponent
