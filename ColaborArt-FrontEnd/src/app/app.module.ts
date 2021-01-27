@@ -14,7 +14,8 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { CadastrarArtistaComponent } from './cadastrar-artista/cadastrar-artista.component';
 import {HttpClientModule} from '@angular/common/http';
-import { InicioComponent } from './inicio/inicio.component'
+import { InicioComponent } from './inicio/inicio.component';
+
 
 
 @NgModule({

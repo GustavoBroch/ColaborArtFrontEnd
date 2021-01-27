@@ -46,10 +46,10 @@
                     <i class="fa fa-search text-dark fs-16" aria-hidden="true"></i>
                 </a>
             </form>
-
+            <!-- Botão para acionar modal -->
             <ul class="navbar-nav d-flex align-items-right fs-16">
                 <li id="usuario" class="nav-item active ml-4">
-                    <a href="">
+                    <a data-toggle="modal" data-target="#ExemploModalCentralizado">
                         <i class="fa fa-user-circle-o text-dark" aria-hidden="true"></i>
                     </a>
                 </li>
@@ -64,3 +64,44 @@
         </div>
     </nav>
 </div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Entrar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="usuario">Email:</label>
+                <input [(ngModel)]= 'userLogin.email' class= "form-control" type="text" name="usuario" id= "usuario"
+                placeholder="Digite seu email">
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input [(ngModel)]= 'userLogin.senha' class= "form-control" type="password" name="senha" id= "senha"
+                placeholder="Digite sua senha">
+            </div>
+
+            <div class="form-group">
+                <p class="text-center">Não tem uma conta?
+                    <a routerLink="/cadastrar" data-dismiss="modal">Cadastre-se</a> 
+                 </p>
+            </div>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-danger mr-3" data-dismiss="modal">Fechar</button>
+
+                <button (click)='entrar()'type= "submit" class="btn btn-success" data-dismiss="modal">Entrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
