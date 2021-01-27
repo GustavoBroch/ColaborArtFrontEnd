@@ -38,5 +38,9 @@ getByIdCategoria(id: number):Observable<Categoria>{
 putCategoria(categoria: Categoria):Observable<Categoria>{
   return this.http.put<Categoria>('http://localhost:8080/categoria',categoria,this.token)
 }
-      
+     
+
+deleteCategoria(id:number){
+  return this.http.delete(`http://localhost:8080/categoria/${id}`,this.token)
+}
 }
