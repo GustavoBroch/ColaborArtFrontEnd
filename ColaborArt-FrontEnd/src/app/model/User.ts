@@ -6,10 +6,8 @@ export class User {
   public email: string
   public senha: string
   public cpf: string
-  public endereco: string
-  public numero: number
+  public cep: number
   public foto: string
   public tipo: string
-  public cnpj: string
   public produto: Produto[]
 }

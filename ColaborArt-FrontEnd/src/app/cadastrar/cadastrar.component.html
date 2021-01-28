@@ -19,7 +19,6 @@
               <input [(ngModel)]='user.email' type="text" class="form-control" id="email" name="email" placeholder="Email">
             </div>
 
-
             <div class="form-group">
               <label for="senha">Senha:</label>
               <input (input)='confirmSenha($event)'type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
@@ -30,23 +29,14 @@
               <input [(ngModel)]='user.senha' type="password" class="form-control" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha">
             </div>
 
-            
-
-
             <div class="form-group">
               <label for="cpf">CPF:</label>
               <input [(ngModel)]='user.cpf' type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF(ex : xxx.xxx.xxx-xx)">
             </div>
 
             <div class="form-group">
-              <label for="endereco">Endereço de Entrega:</label>
-              <input [(ngModel)]='user.endereco' type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço">
-            </div>
-
-
-            <div class="form-group">
-              <label for="numero">Número do endereço:</label>
-              <input [(ngModel)]='user.numero' type="text" class="form-control" id="numero" name="numero" placeholder="Número do endereço">
+              <label for="numero">CEP:</label>
+              <input [(ngModel)]='user.cep' type="number" class="form-control" id="cep" name="cep" placeholder="CEP(12345678)">
             </div>
 
 
@@ -54,6 +44,17 @@
               <label for="foto">Foto do Usuário</label>
               <input [(ngModel)]='user.foto' type="text" class="form-control" id="foto" name="foto" placeholder="Link foto do usuário">
             </div>
+
+            <div class="form-group">
+              <label for="tipo">Tipo de Usuário:</label>
+              <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
+                  <option>Selecione um tipo de usuário:</option>
+
+                  <option value="cliente">Cliente</option>
+
+                  <option value="artista">Artista</option>
+              </select>
+          </div>
 
             <div class="d-flex justify-content-center">
 
