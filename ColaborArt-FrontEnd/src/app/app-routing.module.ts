@@ -7,9 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { CadastrarArtistaComponent } from './cadastrar-artista/cadastrar-artista.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { InicioCategoriaComponent } from './inicio-categoria/inicio-categoria.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'home', pathMatch:'full'},
+  //{path: '', redirectTo:'home', pathMatch:'full'},
   {path: 'cadastrar', component:CadastrarComponent},
   {path: 'cadastrarArtista', component:CadastrarArtistaComponent},
   {path:'home',component:HomeComponent},
