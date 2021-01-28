@@ -7,14 +7,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { ContatoComponent } from './contato/contato.component';
-import { QuemSomosComponent } from './quem-somos/quem-somos.component';
-import { EntrarComponent } from './entrar/entrar.component';
+
+
 
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { CadastrarArtistaComponent } from './cadastrar-artista/cadastrar-artista.component';
 import {HttpClientModule} from '@angular/common/http';
 import { InicioComponent } from './inicio/inicio.component';
+
+
 
 import { InicioCategoriaComponent } from './inicio-categoria/inicio-categoria.component'
 
@@ -32,10 +32,8 @@ import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.co
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    ContatoComponent,
-    QuemSomosComponent,
-    EntrarComponent,
     CadastrarComponent,
+    InicioComponent,
     CadastrarArtistaComponent,
     InicioComponent,
     InicioCategoriaComponent,
