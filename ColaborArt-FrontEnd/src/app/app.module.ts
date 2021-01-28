@@ -16,6 +16,16 @@ import { InicioComponent } from './inicio/inicio.component';
 
 
 
+import { InicioCategoriaComponent } from './inicio-categoria/inicio-categoria.component'
+
+import { CategoriaComponent } from './categoria/categoria.component';
+import { EditCategoriaComponent } from './edit-categoria/edit-categoria.component';
+import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.component';
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +33,14 @@ import { InicioComponent } from './inicio/inicio.component';
     HomeComponent,
     FooterComponent,
     CadastrarComponent,
-  
-    InicioComponent
+    InicioComponent,
+    CadastrarArtistaComponent,
+    InicioComponent,
+    InicioCategoriaComponent,
+    CategoriaComponent,
+    EditCategoriaComponent,
+    ApagarCategoriaComponent,
+    
   ],
   imports: [
     BrowserModule,
