@@ -51,7 +51,7 @@ findAllCategoria(){
 }
 
   atualizar(){
-    this.categoria.id = this.idCat
+    this.categoria.idCategoria = this.idCat
     this.produto.categoria = this.categoria
 
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
