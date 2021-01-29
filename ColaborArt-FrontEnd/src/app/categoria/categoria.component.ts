@@ -20,7 +20,7 @@ export class CategoriaComponent implements OnInit {
 
   ngOnInit() {
     if(environment.token== ''){
-this.router.navigate(['/entrar']) /* caminho colocado dentro do projeto  */
+this.router.navigate(['/inicio']) /* caminho colocado dentro do projeto  */
 
     }
   this.findAllCategoria()

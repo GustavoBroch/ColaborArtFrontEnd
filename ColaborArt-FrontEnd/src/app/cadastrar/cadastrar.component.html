@@ -21,7 +21,7 @@
 
             <div class="form-group">
               <label for="senha">Senha:</label>
-              <input (input)='confirmSenha($event)'type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+              <input (input)='confirmSenha($event)' type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
             </div>
 
             <div class="form-group">
@@ -48,18 +48,18 @@
             <div class="form-group">
               <label for="tipo">Tipo de Usuário:</label>
               <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
-                  <option>Selecione um tipo de usuário:</option>
+                <option>Selecione um tipo de usuário:</option>
 
-                  <option value="cliente">Cliente</option>
+                <option value="cliente">Cliente</option>
 
-                  <option value="artista">Artista</option>
+                <option value="artista">Artista</option>
               </select>
-          </div>
+            </div>
 
             <div class="d-flex justify-content-center">
 
               <button type="submit" class="btn btn-laranja btn-outline-dark " (click)='cadastrar()'>Cadastrar</button>
-              <button type="submit" class="btn btn-secondary btn-outline-dark text-light ml-4" routerLink='/home'>
+              <button type="submit" class="btn btn-secondary btn-outline-dark text-light ml-4" routerLink='/inicio'>
                 Cancelar
               </button>
             </div>
