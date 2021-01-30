@@ -10,14 +10,30 @@ import { CategoriaService } from '../service/categoria.service';
   styleUrls: ['./edit-categoria.component.css']
 })
 export class EditCategoriaComponent implements OnInit {
-categoria : Categoria = new Categoria
+categoria : Categoria= new Categoria()
 
-  constructor(private categoriaService : CategoriaService , private router : Router , private route : ActivatedRoute) { }
+  constructor(private categoriaService : CategoriaService , private router : Router,private route : ActivatedRoute) { }
 
-  ngOnInit() {
-    if(environment.token==''){
-
+  ngOnInit(){
+    if(environment.token== '')
+    {
+      this.router.navigate(['/inicio'])
     }
+    let id = this.route.snapshot.params['id']
+    this.findByIdCategoria(id)
+  }
+  findByIdCategoria(id: number){
+this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
+  this.categoria= resp
+})
+  }
+
+  atualizar(){
+    this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria)=>
+    {this.categoria = resp
+      alert('Categoria Atualizado com sucesso!')
+      this.router.navigate(['/categoria'])
+    })
   }
 
 }
