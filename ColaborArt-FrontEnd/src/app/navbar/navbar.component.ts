@@ -48,6 +48,7 @@ export class NavbarComponent implements OnInit {
       environment.nomeCompleto = this.userLogin.nomeCompleto
       environment.id = this.userLogin.idUserLogin
       this.router.navigate(['/inicio'])
+      alert('Logado com sucesso!')
     }, erro => {
       if (erro.status == '500') {
         alert('Usuário ou senha estão incorretos')
