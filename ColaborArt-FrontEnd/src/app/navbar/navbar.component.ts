@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { UserLogin } from '../model/UserLogin';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  userLogin: UserLogin = new UserLogin()
+
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     window.scroll(0,0);
@@ -29,6 +38,22 @@ export class NavbarComponent implements OnInit {
       }
     });
     
+  }
+
+  entrar() {
+    this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) => {
+      this.userLogin = resp
+      environment.token = this.userLogin.token
+      environment.foto = this.userLogin.foto
+      environment.nomeCompleto = this.userLogin.nomeCompleto
+      environment.id = this.userLogin.idUserLogin
+      this.router.navigate(['/inicio'])
+      alert('Logado com sucesso!')
+    }, erro => {
+      if (erro.status == '500') {
+        alert('Usuário ou senha estão incorretos')
+      }
+    })
   }
 
 }

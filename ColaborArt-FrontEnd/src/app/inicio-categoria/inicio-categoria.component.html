@@ -1,0 +1,116 @@
+<div class="container-fluid">
+
+    <div class="row bg-dark">
+
+        <div class="col-md-12 text-white">
+
+            <h1 class="mt-4 text-center">
+                Olá, artista! Seja bem-vindx!</h1>
+            <hr color="dark">
+
+            <div class="container">
+                <h5 class="fs-18 text-center">
+                    Neste espaço, você consegue visualizar todas as categorias de produtos
+                    cadastradas, além de editar informações sobre elas e acrescentar novas opções.
+                </h5>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="row mt-5">
+
+        <div class="col-md-12 text-center text-dark bg-warning">
+
+            <h1 class="fs-54 text-center">Categorias</h1>
+
+        </div>
+
+    </div>
+
+    <div class="row d-flex justify-content-center mt-4 mb-5">
+
+        <div class="col-md-5">
+
+            <div class="row d-flex justify-content-center">
+
+                
+                <h5 class="fs-18 text-center">
+                    Veja aqui todos as categorias cadastradas ou cadastre um nova:
+                </h5>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Categoria</label>
+                        <input [(ngModel)]='categoria.tipoProduto' type="text" class="form-control" id="tipoProduto" placeholder="Ex: Camiseta">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricaoCategoria">Descrição</label>
+                        <textarea [(ngModel)]='categoria.descricaoCategoria' class="form-control" name="descricaoCategoria" id="descricaoCategoria"
+                            rows="3">
+                        </textarea>
+                    </div>
+                </div>             
+
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <button (click)='cadastrarCategoria()' class="btn btn-warning">
+                    Cadastrar
+                </button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-12 text-center text-dark bg-warning">
+            <h2>Todos as categorias:</h2>
+        </div>
+    </div>
+
+    <div class="row mt-3 mb-5 d-flex justify-content-center">
+        <div class="col-md-6">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Cód. de cadastro</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  *ngFor='let categoria of listaCategoria'>
+                        <th class="text-center" scope="row">{{categoria.idCategoria}}</th>
+                        <td>{{categoria.tipoProduto}}</td>
+                        <td>{{categoria.descricaoCategoria}}</td>
+                        <td>
+                            <a href="/">
+                                <i class="fa fa-trash-o pl-3 text-dark fs-14" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="/">
+                                <i class="fa fa-pencil-square-o pl-3 text-dark fs-14" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    </tr>                   
+                </tbody>
+            </table>
+        </div>
+
+        <!-- <div class="col-md-6 py-0 d-flex justify-content-center">
+            <img src="https://i.imgur.com/V0ib5r7.png" alt="Mão desenhando" width="500px" height="500px">
+        </div> -->
+
+    </div>
+
+</div>

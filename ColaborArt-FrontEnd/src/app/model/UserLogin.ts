@@ -7,7 +7,5 @@ export class UserLogin {
   public foto: string
   public tipo: string
   public cpf: string
-  public endereco: string
-  public numero: number
-  public cnpj: string
+  public cep: number
 }
