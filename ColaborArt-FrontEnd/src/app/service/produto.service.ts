@@ -31,7 +31,7 @@ getByIdProduto(id: number): Observable<Produto>{
 
 
 putProduto(produto: Produto) : Observable<Produto>{
-  return this.http.put<Produto>('http://localhost:8080/produto',postagem,this.token)
+  return this.http.put<Produto>('http://localhost:8080/produto',produto,this.token)
 }
 
 deleteProduto(id: number){
