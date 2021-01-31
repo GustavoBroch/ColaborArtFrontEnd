@@ -4,7 +4,7 @@
   <a class="navbar-brand" href="#"><img src="{{foto}}" class="img-fluid rounded-circle borda" width="60px" height="60px"
       alt="Blank"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação"></button>
 
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,10 +42,12 @@
         <h5 class="fs-19">Conheça nossos produtos: ColaborArt-se!</h5>
         <div class="row">
           <button class="btn btn-warning mt-4 mr-4">Ver Produto</button>
-          <button class="btn btn-warning mt-4" data-toggle="modal" data-target="#novoProduto">Novo Produto</button>
+          <button class="btn btn-warning mt-4" data-toggle="modal" 
+          data-target="#novoProduto">Novo Produto</button>
         </div>
       </div>
     </div>
+  
 
     <div class="col-md-6 d-flex justify-content-center">
       <img src="https://i.imgur.com/SMArFIP.gif" alt="" width="500px" height="500px" />
@@ -155,41 +157,43 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="novoProduto" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
+
+  <div class="modal fade bd-example-modal-lg font-weight-bold" id="novoProduto" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content" id="fundo-modal" >
+        
         <div class="modal-header">
-          <h5 class="modal-title" id="TituloModalCentralizado">Adicionar Produtos</h5>
+          <h5 class="modal-title" id="myLargeModalLabel">Adicionar Produtos</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label for="nome">Nome</label>
+            <label for="nome">Nome:</label>
             <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto" />
           </div>
 
           <div class="form-group">
-            <label for="preco">Preco do produto</label>
-            <input type="text" class="form-control" id="preco" placeholder="Digite o preco do item" />
+            <label for="preco">Preço:</label>
+            <input type="number" class="form-control" id="preco" placeholder="Digite o preço do produto" />
           </div>
 
           <div class="form-group">
-            <label for="titulo">Descrição</label>
+            <label for="titulo">Descrição:</label>
             <textarea class="form-control" name="texto" id="texto" rows="3"></textarea>
           </div>
 
 
           <div class="form-group">
-            <label for="foto">Foto do produto</label>
-            <input [(ngModel)]='produto.urlProduto' type="text" class="form-control" id="foto"
-              placeholder="url da foto do produto" />
+
+            <label for="foto">Foto do produto:</label>
+            <input [(ngModel)]='produto.urlProduto' type="text" class="form-control" id="foto" placeholder="Insira a URL da foto do produto" />
+
           </div>
 
           <div class="form-group">
-            <label for="tamanho">Escolha um Tamanho do produto
+            <label for="tamanho">Tamanho
               <a data-dismiss="modal" routerLink="/categoria"></a>:
             </label>
             <select name="tamanho" id="tamanho" class="form-control">
@@ -197,12 +201,12 @@
               <option value="m">M</option>
               <option value="g">G</option>
               <option value="gg">GG</option>
-              <option value="unico">Tam Unico</option>
+              <option value="unico">Único</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="disponivel">produto disponivel no estoque ?
+            <label for="disponivel">Produto disponível no estoque
               <a data-dismiss="modal" routerLink="/categoria"></a>:
             </label>
             <select name="disponivel" id="disponivel" class="form-control">
@@ -292,4 +296,11 @@
         </div>
       </div>
     </div>
+
   </footer>
+
+  </div>
+
+
+
+

@@ -5,11 +5,10 @@ import { environment } from 'src/environments/environment.prod';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { Produto } from 'src/app/model/Produto';
 import { Component, OnInit } from '@angular/core';
+
 import { from } from 'rxjs';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
-
-
 
 @Component({
   selector: 'app-inicio',
@@ -17,6 +16,7 @@ import { CategoriaService } from '../service/categoria.service';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+
   nome = environment.nomeCompleto
   foto = environment.foto
 
@@ -25,7 +25,7 @@ export class InicioComponent implements OnInit {
 
   listaCategoria: Categoria[]
   listaProdutos: Produto[]
-
+  
   user: User = new User()
 
   idUser = environment.id
@@ -37,6 +37,7 @@ export class InicioComponent implements OnInit {
     private authService: AuthService,
     private categoriaService: CategoriaService
 
+
   ) { }
 
   ngOnInit() {
@@ -46,6 +47,7 @@ export class InicioComponent implements OnInit {
     this.getAllCategoria()
     this.getAllProdutos()
   }
+
 
   getAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
@@ -72,19 +74,17 @@ export class InicioComponent implements OnInit {
 
   }
 
-  publicar() {
-    this.categoria.idCategoria = this.idCat
-    this.produto.categoria = this.categoria
-
-    this.user.idUsuario = this.idUser
-    this.produto.usuario = this.user
-
-    this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
-      this.produto = resp
-      alert('Produto cadastrado realizada com sucesso!!')
-      this.produto = new Produto()
-      this.getAllProdutos()
+publicar(){
+this.categoria.idCategoria = this.idCat
+this.produto.categoria = this.categoria
+this.user.idUsuario = this.idUser
+this.produto.usuario = this.user
+  
+this.produtoService.postProduto(this.produto).subscribe((resp : Produto)=>{
+this.produto = resp
+ alert('Produto cadastrado realizada com sucesso!!')
+  this.produto = new Produto()
+  this.getAllProdutos()
     })
-
   }
 }
