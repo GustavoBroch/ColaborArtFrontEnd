@@ -5,17 +5,13 @@ import { environment } from 'src/environments/environment.prod';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { Produto } from 'src/app/model/Produto';
 import { Component, OnInit } from '@angular/core';
-
+// import { Component} from '@angular/core';
 import { from } from 'rxjs';
-
-import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
-import { Produto } from '../model/Produto';
-import { User } from '../model/User';
-import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
-import { ProdutoService } from '../service/produto.service';
+// import { OnInit } from '@angular/core';
+
+
 
 
 @Component({
@@ -24,23 +20,24 @@ import { ProdutoService } from '../service/produto.service';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-  listaProdutos: Produto[]
+  
 
 
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
-    // private authService: AuthService
+    private authService: AuthService,
+    private categoriaService: CategoriaService
     
   ) { }
 
-  ngOnInit(){
-    if(environment.token == ''){
-      this.router.navigate(['/entrar'])
-    }
-    this.getAllProdutos()
-    //this.getAllCategoria()
-  }
+  // ngOnInit(){
+  //   if(environment.token == ''){
+  //     this.router.navigate(['/entrar'])
+  //   }
+  //   this.getAllProdutos()
+  //   //this.getAllCategoria()
+  // }
 
   getAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp:Produto[])=>{
@@ -55,7 +52,7 @@ export class InicioComponent implements OnInit {
   // }
 
 
-  categoria : Categoria = new Categoria()
+categoria : Categoria = new Categoria()
 produto : Produto = new Produto()
 listaCategoria : Categoria[]
 listaProdutos : Produto[]
@@ -64,44 +61,42 @@ user: User = new User()
 idUser = environment.id
 idCat : number
 
-  constructor(private router: Router, private produtoService : ProdutoService, private categoriaService : CategoriaService, private authService :  AuthService) { }
+ 
 
   ngOnInit() {
     if(environment.token==''){
       alert('Sua sessao expirou, entre novamente')
       this.router.navigate(['/entrar'])
-
     }
+
     this.getAllCategoria()
     this.getAllProdutos()
   }
 
   getAllCategoria(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=> {
-      this.listaCategoria= resp
+    this.listaCategoria= resp
     })
   }
 
   findByIdCategoria(){
-this.categoriaService.getByIdCategoria(this.idCat).subscribe((resp: Categoria)=>{
+  this.categoriaService.getByIdCategoria(this.idCat).subscribe((resp: Categoria)=>{
   this.categoria = resp
-})
-
-  }
-
-getAllProdutos(){
-  this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>
-  {
-    this.listaProdutos= resp
   })
 }
+
+// getAllProdutos(){
+//   this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>
+//   {
+//     this.listaProdutos= resp
+//   })
+// }
 
 findByIdUser(){
   this.authService.getByIdUser(this.idUser).subscribe((resp: User)=>{
 this.user = resp
   })
 }
-
 
 publicar(){
 this.categoria.idCategoria = this.idCat
@@ -115,7 +110,6 @@ this.produtoService.postProduto(this.produto).subscribe((resp : Produto)=>{
   alert('Produto cadastrado realizada com sucesso!!')
   this.produto = new Produto()
   this.getAllProdutos()
-})
-
-}
+    })
+  }
 }
