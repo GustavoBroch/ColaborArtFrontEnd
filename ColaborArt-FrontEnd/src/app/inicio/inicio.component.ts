@@ -107,7 +107,7 @@ this.produto.usuario = this.user
 
 this.produtoService.postProduto(this.produto).subscribe((resp : Produto)=>{
   this.produto = resp
-  alert('Produto cadastrado realizada com sucesso!!')
+  alert('Produto cadastrado realizado com sucesso!!')
   this.produto = new Produto()
   this.getAllProdutos()
     })
