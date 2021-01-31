@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
         nav.style.backgroundColor = 'transparent';
         nav.style.backgroundImage = '';
       } else {
-        nav.style.backgroundImage = 'url("../../assets/img/teste.png")';
+        nav.style.backgroundImage = 'url("../../assets/img/navBar.png")';
         nav.style.transition = 'background-color 200ms linear';
       }
     });
