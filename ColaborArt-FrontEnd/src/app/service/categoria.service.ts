@@ -29,9 +29,13 @@ export class CategoriaService {
 
   }
 
+
+getBytipoProduto(tipoProduto: string): Observable<Categoria[]> {
+  return this.http.get<Categoria[]>(`http://localhost:8080/categoria/produtos/${tipoProduto}`, this.token)
+}
+
   getByIdCategoria(id: number): Observable<Categoria> {
     return this.http.get<Categoria>(`http://localhost:8080/categoria/${id}`, this.token)
-
   }
 
 
