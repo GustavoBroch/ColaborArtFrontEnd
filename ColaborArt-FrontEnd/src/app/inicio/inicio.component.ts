@@ -100,5 +100,4 @@ export class InicioComponent implements OnInit {
       this.produto = new Produto();
       this.getAllProdutos();
     });
-  }
-}
+
