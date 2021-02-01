@@ -20,7 +20,7 @@ import { AlertasService } from '../service/alertas.service';
 export class InicioComponent implements OnInit {
   nome = environment.nomeCompleto
   foto = environment.foto
-
+  token = environment.token
 
   categoria: Categoria = new Categoria()
   produto: Produto = new Produto()
@@ -28,12 +28,6 @@ export class InicioComponent implements OnInit {
   listaCategoria: Categoria[]
   listaProdutos: Produto[]
   nomePost: string
-
-  nome = environment.nomeCompleto
-  foto = environment.foto
-  token = environment.token
-
-
 
   user: User = new User()
 
@@ -47,7 +41,7 @@ export class InicioComponent implements OnInit {
     private authService: AuthService,
 
     private categoriaService: CategoriaService,
-    private alertas:AlertasService
+    private alertas: AlertasService
 
   ) { }
 
@@ -60,32 +54,20 @@ export class InicioComponent implements OnInit {
     this.findByIdUser();
     this.getAllCategoria();
     this.getAllProdutos();
-    this.getListProduto();
+
   }
-
-  
-
 
   getAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
-
-
-  getListProduto() {
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
-
       this.listaProdutos = resp
     });
-    
   }
-
 
   findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
-
       this.user = resp
 
     });
-
   }
 
   getAllCategoria() {
@@ -128,29 +110,27 @@ export class InicioComponent implements OnInit {
       this.alertas.showAlertSuccess('Produto cadastrado realizada com sucesso!!')
 
 
-    
+
 
       this.produto = new Produto()
       this.getAllProdutos()
-    })
+    });
   }
 
   findByNomeProduto() {
 
-    if(this.nomePost == ''){
+    if (this.nomePost == '') {
       this.getAllProdutos()
     } else {
       this.produtoService
         .getByNomeProduto(this.nomePost)
         .subscribe((resp: Produto[]) => {
           this.listaProdutos = resp
-        })
+        });
     }
   }
 }
-      alert('Produto cadastrado realizada com sucesso!!');
-      this.produto = new Produto();
-      this.getAllProdutos();
-    });
+
+
 
 
