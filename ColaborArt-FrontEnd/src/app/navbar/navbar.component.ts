@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from '../model/UserLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas:AlertasService
   ) { }
 
   ngOnInit() {
@@ -33,24 +35,28 @@ export class NavbarComponent implements OnInit {
         nav.style.backgroundColor = 'transparent';
         nav.style.backgroundImage = '';
       } else {
-        nav.style.backgroundImage = 'url("../../assets/img/teste.png")';
+        nav.style.backgroundImage = 'url("../../assets/img/navBar.png")';
         nav.style.transition = 'background-color 200ms linear';
       }
     });
     
   }
 
+  
+
   entrar() {
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
+      console.log(resp)
       environment.token = this.userLogin.token
       environment.foto = this.userLogin.foto
       environment.nomeCompleto = this.userLogin.nomeCompleto
       environment.id = this.userLogin.idUserLogin
       this.router.navigate(['/inicio'])
+      this.alertas.showAlertSuccess('Logado com sucesso!')
     }, erro => {
       if (erro.status == '500') {
-        alert('Usuário ou senha estão incorretos')
+        this.alertas.showAlertDanger('Usuário ou senha estão incorretos')
       }
     })
   }

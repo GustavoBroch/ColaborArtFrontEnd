@@ -8,33 +8,42 @@ import { Produto } from '../model/Produto';
   providedIn: 'root'
 })
 export class ProdutoService {
-
-  constructor(private http: HttpClient) { }
+  
+  constructor(private http: HttpClient) { 
+  }
   token = {
-    headers : new HttpHeaders().set('Authorization',environment.token)
-}
+    headers: new HttpHeaders().set('Authorization', environment.token)
+  }
 
 
+  getAllProdutos(): Observable<Produto[]> {
+    return this.http.get<Produto[]>('http://localhost:8080/produto',this.token)
+  }
 
-getAllProdutos():Observable<Produto[]>{
-  return this.http.get<Produto[]>('http://locahost:8080/produto',this.token)
-}
+/*   getAllDestaque(): Observable<Produto[]> {
+    return this.http.get<Produto[]>('http://localhost:8080/produto/destaque')
+  } */
 
-postProduto(produto: Produto) : Observable<Produto>{
-  return this.http.post<Produto>('http://localhost:8080/produto',produto,this.token)
+  postProduto(produto: Produto): Observable<Produto> {
+    return this.http.post<Produto>('http://localhost:8080/produto', produto, this.token)
 
-}
+  }
 
-getByIdProduto(id: number): Observable<Produto>{
-  return this.http.get<Produto>(`http://localhost:8080/produto${id}`,this.token)
-}
+  getByIdProduto(id: number): Observable<Produto> {
+    return this.http.get<Produto>(`http://localhost:8080/produto${id}`, this.token)
+  }
 
 
-putProduto(produto: Produto) : Observable<Produto>{
-  return this.http.put<Produto>('http://localhost:8080/produto',postagem,this.token)
-}
+  getByNomeProduto(tipoProduto: string): Observable<Produto[]> {
+    return this.http.get<Produto[]>(`http://localhost:8080/produto/produto/${tipoProduto}`, this.token)
+  }
 
-deleteProduto(id: number){
-  return this.http.delete(`http://localhost:8080/produto${id}`,this.token)
-}
+
+  putProduto(produto: Produto): Observable<Produto> {
+    return this.http.put<Produto>('http://localhost:8080/produto', produto, this.token)
+  }
+
+  deleteProduto(id: number) {
+    return this.http.delete(`http://localhost:8080/produto${id}`, this.token)
+  }
 }

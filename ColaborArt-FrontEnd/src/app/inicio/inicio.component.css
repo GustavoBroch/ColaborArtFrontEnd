@@ -13,3 +13,19 @@
 .espaco {
     letter-spacing: 0.1em;
 }
+
+.modal-lg {
+    width: 550px;
+}
+
+#fundo-modal {
+    background-image: url("../../assets/img/testeCad.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 700px;
+      
+}
+
+
+

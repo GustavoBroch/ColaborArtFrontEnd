@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouteConfigLoadEnd, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
@@ -15,13 +16,13 @@ export class CategoriaComponent implements OnInit {
   listaCategoria : Categoria[]
 
   constructor(private router : Router , 
-    private categoriaService : CategoriaService
+    private categoriaService : CategoriaService,
+    private alertas:AlertasService
     ) { }
 
   ngOnInit() {
-    if(environment.token== ''){
-this.router.navigate(['/entrar']) /* caminho colocado dentro do projeto  */
-
+    if (environment.token == '') {
+      this.router.navigate(['/home'])
     }
   this.findAllCategoria()
   }
@@ -34,7 +35,7 @@ this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
   cadastrar(){
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
       this.categoria= resp
-      alert('Categoria cadastrada com sucesso !')
+      this.alertas.showAlertSuccess('Categoria cadastrada com sucesso !')
       this.findAllCategoria()
       this.categoria = new Categoria()
     })

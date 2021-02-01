@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -14,6 +15,7 @@ import { InicioCategoriaComponent } from './inicio-categoria/inicio-categoria.co
 import { CategoriaComponent } from './categoria/categoria.component';
 import { EditCategoriaComponent } from './edit-categoria/edit-categoria.component';
 import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -23,17 +25,18 @@ import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.co
     FooterComponent,
     CadastrarComponent,
     InicioComponent,
-    InicioComponent,
     InicioCategoriaComponent,
     CategoriaComponent,
     EditCategoriaComponent,
     ApagarCategoriaComponent,
+    AlertasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

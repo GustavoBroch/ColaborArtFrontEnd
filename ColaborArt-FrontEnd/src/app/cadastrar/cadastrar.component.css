@@ -1,8 +1,26 @@
 .btn-laranja {
-  background-color: #ff9100;
+  background-color: hsl(34, 87%, 49%);
 }
 .btn-laranja:hover {
-  background-color: #007bff;
+  background-color: #f3c281;
   color: black; /* cor do texto */
   font-weight: bold;
+}
+
+#img-cad {
+  background-image: url("../../assets/img/cadastro1.jpg");
+  min-height: 695px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#header {
+    background-image: url("../../assets/img/testeCad.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+      
 }

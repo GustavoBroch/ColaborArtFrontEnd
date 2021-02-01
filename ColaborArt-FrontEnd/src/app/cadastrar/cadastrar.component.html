@@ -1,11 +1,13 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6" id="">
-
+  <div class="row" >
+    <div class="col-md-6" id="img-cad">
     </div>
-    <div class="col-md-6 mb-5 mt-5">
+
+
+   
+    <div class="col-md-6 m-0 font-weight-bold"  id="header" >
       <div class="row d-flex justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-10 mt-5">
           <h1 class="text-center">Cadastro</h1>
 
           <form>
@@ -21,7 +23,7 @@
 
             <div class="form-group">
               <label for="senha">Senha:</label>
-              <input (input)='confirmSenha($event)'type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+              <input (input)='confirmSenha($event)' type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
             </div>
 
             <div class="form-group">
@@ -41,25 +43,25 @@
 
 
             <div class="form-group">
-              <label for="foto">Foto do Usuário</label>
-              <input [(ngModel)]='user.foto' type="text" class="form-control" id="foto" name="foto" placeholder="Link foto do usuário">
+              <label for="foto">Foto do usuário</label>
+              <input [(ngModel)]='user.foto' type="text" class="form-control" id="foto" name="foto" placeholder="Link da foto do usuário">
             </div>
 
             <div class="form-group">
               <label for="tipo">Tipo de Usuário:</label>
               <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
-                  <option>Selecione um tipo de usuário:</option>
+                <option>Selecione um tipo de usuário:</option>
 
-                  <option value="cliente">Cliente</option>
+                <option value="cliente">Cliente</option>
 
-                  <option value="artista">Artista</option>
+                <option value="artista">Artista</option>
               </select>
-          </div>
+            </div>
 
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center mb-5">
 
               <button type="submit" class="btn btn-laranja btn-outline-dark " (click)='cadastrar()'>Cadastrar</button>
-              <button type="submit" class="btn btn-secondary btn-outline-dark text-light ml-4" routerLink='/home'>
+              <button type="submit" class="btn btn-secondary btn-outline-dark text-light ml-4" routerLink='/inicio'>
                 Cancelar
               </button>
             </div>
@@ -69,7 +71,11 @@
 
 
         </div>
+        
+
       </div>
+      
     </div>
+    
   </div>
 </div>
