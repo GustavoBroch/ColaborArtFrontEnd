@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { Produto } from 'src/app/model/Produto';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -18,7 +19,10 @@ export class ProdutoComponent implements OnInit {
   idCat : number
   idProd : number
   
-  constructor(private router : Router , private route : ActivatedRoute, private produtoService : ProdutoService ) { }
+  constructor(private router : Router , 
+    private route : ActivatedRoute, 
+    private produtoService : ProdutoService,
+    private alertas:AlertasService ) { }
 
   ngOnInit() {
 
@@ -41,14 +45,14 @@ export class ProdutoComponent implements OnInit {
     this.produto.categoria = this.categoria
 
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
-      alert('Produto atualizado com sucesso!')
+    this.alertas.showAlertSuccess('Produto atualizado com sucesso!')
       this.router.navigate(['/inicio'])
     })
   }
 
   apagar(){
     this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
-      alert('Produto apagado com sucesso!')
+      this.alertas.showAlertSuccess('Produto apagado com sucesso!')
       this.router.navigate(['/inicio'])
     })
   }

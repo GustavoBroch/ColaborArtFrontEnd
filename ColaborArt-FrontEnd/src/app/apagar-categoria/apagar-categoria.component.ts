@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
@@ -11,9 +12,12 @@ import { CategoriaService } from '../service/categoria.service';
 })
 export class ApagarCategoriaComponent implements OnInit {
 
-  categoria : Categoria = new Categoria()
-  idCategoria : number
-  constructor(private categoriaService : CategoriaService, private router : Router , private route : ActivatedRoute) { }
+  categoria: Categoria = new Categoria()
+  idCategoria: number
+  constructor(private categoriaService: CategoriaService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private alertas: AlertasService) { }
 
   ngOnInit() {
     if (environment.token == '') {
@@ -24,16 +28,16 @@ export class ApagarCategoriaComponent implements OnInit {
     this.findByIdCategoria(this.idCategoria)
   }
 
-  findByIdCategoria(id:number){
-    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
-      this.categoria=resp
+  findByIdCategoria(id: number) {
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria) => {
+      this.categoria = resp
     })
   }
 
-  apagar(){
-    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
-alert('Categoria deletado com sucesso!')
-this.router.navigate(['/categoria'])
+  apagar() {
+    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(() => {
+      this.alertas.showAlertSuccess('Categoria deletado com sucesso!')
+      this.router.navigate(['/categoria'])
     })
   }
 }

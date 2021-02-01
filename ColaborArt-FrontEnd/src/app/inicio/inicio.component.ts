@@ -10,6 +10,7 @@ import { from } from 'rxjs';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 import { UserLogin } from '../model/UserLogin';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-inicio',
@@ -44,7 +45,9 @@ export class InicioComponent implements OnInit {
     private router: Router,
     private produtoService: ProdutoService,
     private authService: AuthService,
-    private categoriaService: CategoriaService
+
+    private categoriaService: CategoriaService,
+    private alertas:AlertasService
 
   ) { }
 
@@ -122,7 +125,11 @@ export class InicioComponent implements OnInit {
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
 
-      alert('Produto cadastrado realizada com sucesso!!')
+      this.alertas.showAlertSuccess('Produto cadastrado realizada com sucesso!!')
+
+
+    
+
       this.produto = new Produto()
       this.getAllProdutos()
     })
