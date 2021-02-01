@@ -18,7 +18,7 @@ export class EditCategoriaComponent implements OnInit {
 
   ngOnInit() {
     if (environment.token == '') {
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/home'])
     }
     let id = this.route.snapshot.params['id']
     this.findByIdCategoria(id)

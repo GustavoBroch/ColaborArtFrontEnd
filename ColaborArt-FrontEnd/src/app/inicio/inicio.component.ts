@@ -1,6 +1,6 @@
 import { User } from './../model/User';
 import { AuthService } from './../service/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { Produto } from 'src/app/model/Produto';
@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
+import { UserLogin } from '../model/UserLogin';
 
 @Component({
   selector: 'app-inicio',
@@ -19,46 +20,46 @@ export class InicioComponent implements OnInit {
 
   nome = environment.nomeCompleto
   foto = environment.foto
+  token = environment.token
 
   categoria: Categoria = new Categoria()
   produto: Produto = new Produto()
 
   listaCategoria: Categoria[]
   listaProdutos: Produto[]
-  
+
   user: User = new User()
 
   idUser = environment.id
   idCat: number
 
   constructor(
+
     private router: Router,
     private produtoService: ProdutoService,
     private authService: AuthService,
     private categoriaService: CategoriaService
-
-
   ) { }
 
   ngOnInit() {
     if (environment.token == '') {
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/home'])
     }
-    this.getAllCategoria()
-    this.getAllProdutos()
+    console.log(this.token)
+    this.getListProduto()
   }
 
 
-  getAllProdutos() {
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+  getListProduto() {
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
       this.listaProdutos = resp
     })
   }
 
   findByIdUser() {
-   this.authService.getByIdUser(this.idUser).subscribe((resp: User)=>{
-   this.user = resp
-   })
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
+      this.user = resp
+    })
   }
 
   getAllCategoria() {
@@ -74,17 +75,17 @@ export class InicioComponent implements OnInit {
 
   }
 
-publicar(){
-this.categoria.idCategoria = this.idCat
-this.produto.categoria = this.categoria
-this.user.idUsuario = this.idUser
-this.produto.usuario = this.user
-  
-this.produtoService.postProduto(this.produto).subscribe((resp : Produto)=>{
-this.produto = resp
- alert('Produto cadastrado realizada com sucesso!!')
-  this.produto = new Produto()
-  this.getAllProdutos()
+  publicar() {
+    this.categoria.idCategoria = this.idCat
+    this.produto.categoria = this.categoria
+    this.user.idUsuario = this.idUser
+    this.produto.usuario = this.user
+
+    this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
+      this.produto = resp
+      alert('Produto cadastrado realizada com sucesso!!')
+      this.produto = new Produto()
+      this.getListProduto()
     })
   }
 }
