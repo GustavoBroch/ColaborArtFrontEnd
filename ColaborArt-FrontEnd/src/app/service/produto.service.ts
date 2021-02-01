@@ -15,6 +15,7 @@ export class ProdutoService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+
   getAllProdutos(): Observable<Produto[]> {
     return this.http.get<Produto[]>('http://localhost:8080/produto',this.token)
   }
@@ -30,6 +31,11 @@ export class ProdutoService {
 
   getByIdProduto(id: number): Observable<Produto> {
     return this.http.get<Produto>(`http://localhost:8080/produto${id}`, this.token)
+  }
+
+
+  getByNomeProduto(tipoProduto: string): Observable<Produto[]> {
+    return this.http.get<Produto[]>(`http://localhost:8080/produto/produto/${tipoProduto}`, this.token)
   }
 
 

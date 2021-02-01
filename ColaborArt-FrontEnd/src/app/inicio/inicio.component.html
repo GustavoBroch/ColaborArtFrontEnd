@@ -6,7 +6,9 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação"></button>
 
+
   <span class="navbar-toggler-icon"></span>
+
 
 
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -82,13 +84,13 @@
 
     <div class="tab-content mt-5" id="nav-tabContent">
 
-      <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="nav-todosProdutos">
+      <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="nav-todosProdutos-tab">
 
         <div class="row d-flex justify-content-center mt-5 mb-5">
           <div class="col-md-4">
             <div class="form-group">
               <input type="text" class="form-control" id="titulo"
-                placeholder="Digite um título de produtos para pesquisar">
+                placeholder="Digite um título de produtos para pesquisar" [(ngModel)]='nomePost' (keyup)='findByNomeProduto()'>
             </div>
           </div>
         </div>
@@ -100,7 +102,9 @@
           <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
           <div class="card-body">
             <h5 class="card-title">{{item.nome}}</h5>
-            <p class="card-text">{{item.valor}}.</p>
+            <p class="card-text">R${{item.valor}}</p>
+            <small class="text-muted"> Descrição: {{item.categoria.descricaoCategoria}}</small>
+            <small class="text-muted"> Tamanho: {{item.tamanho}}</small>
           </div>
         </div>
       </div>
@@ -172,17 +176,17 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="nome">Nome:</label>
-            <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto" />
+            <input [(ngModel)] ='produto.nome' type="text" class="form-control" id="nome" placeholder="Digite o nome do produto" />
           </div>
 
           <div class="form-group">
             <label for="preco">Preço:</label>
-            <input type="number" class="form-control" id="preco" placeholder="Digite o preço do produto" />
+            <input [(ngModel)] ='produto.valor' type="number" class="form-control" id="preco" placeholder="Digite o preço do produto" />
           </div>
 
           <div class="form-group">
             <label for="titulo">Descrição:</label>
-            <textarea class="form-control" name="texto" id="texto" rows="3"></textarea>
+            <textarea [(ngModel)] ='produto.descricaoProduto'class="form-control" name="texto" id="texto" rows="3"></textarea>
           </div>
 
 
@@ -198,7 +202,7 @@
             <label for="tamanho">Tamanho
               <a data-dismiss="modal" routerLink="/categoria"></a>:
             </label>
-            <select name="tamanho" id="tamanho" class="form-control">
+            <select (change)='tamanhoSelect($event)' name="tamanho" id="tamanho" class="form-control">
               <option value="p">P</option>
               <option value="m">M</option>
               <option value="g">G</option>
@@ -211,18 +215,23 @@
             <label for="disponivel">Produto disponível no estoque
               <a data-dismiss="modal" routerLink="/categoria"></a>:
             </label>
-            <select name="disponivel" id="disponivel" class="form-control">
-              <option value="sim">Sim</option>
-              <option value="nao">Nao</option>
+            <select (change)='disponivelSelect($event)' name="disponivel" id="disponivel" class="form-control">
+              <option value="true">Sim</option>
+              <option value="false">Nao</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="titulo">Escolha um categoria ou
+            <label for="titulo">Escolha uma categoria ou
               <a data-dismiss="modal" routerLink="/categoria">Cadastre uma nova</a>:
             </label>
-            <select name="categoria" id="categoria" class="form-control">
-              <option value="">Categorias</option>
+            <select name="categoria" id="categoria" class="form-control" [(ngModel)] ='idCat'(change)=
+            'findByIdCategoria()'>
+              <option *ngFor='let item of listaCategoria' value="{{item.idCategoria}}">
+                
+                {{item.tipoProduto}}
+
+              </option>
             </select>
           </div>
         </div>
@@ -235,4 +244,5 @@
       </div>
     </div>
   </div>
+
 </div>

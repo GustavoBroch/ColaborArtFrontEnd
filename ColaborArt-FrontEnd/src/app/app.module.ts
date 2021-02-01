@@ -25,7 +25,6 @@ import { AlertasComponent } from './alertas/alertas.component';
     FooterComponent,
     CadastrarComponent,
     InicioComponent,
-    InicioComponent,
     InicioCategoriaComponent,
     CategoriaComponent,
     EditCategoriaComponent,
