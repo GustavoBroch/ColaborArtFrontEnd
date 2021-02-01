@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <label>Categoria</label>
                         <input [(ngModel)]='categoria.tipoProduto' type="text" class="form-control" id="tipoProduto"
-                            placeholder="Ex: Camiseta">
+                            placeholder="Ex: Camiseta" >
                     </div>
 
                     <div class="form-group">
@@ -94,7 +94,7 @@
                     <tbody>
                         <tr *ngFor='let categoria of listaCategoria'>
                             <td>
-                                <a>
+                                <a [routerLink]="['/apagar-categoria',categoria.idCategoria]">
                                     <i class="fa fa-trash-o pl-3 text-dark fs-14" aria-hidden="true"></i>
                                 </a>
 

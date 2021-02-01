@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { InicioCategoriaComponent } from './inicio-categoria/inicio-categoria.component';
 import { EditCategoriaComponent } from './edit-categoria/edit-categoria.component';
+import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'home', pathMatch:'full'},
@@ -15,7 +16,9 @@ const routes: Routes = [
   {path: 'inicio', component:InicioComponent},
   {path: 'categoria', component:InicioCategoriaComponent},
 
-  {path: 'edit-categoria/:id', component:EditCategoriaComponent}
+  {path: 'edit-categoria/:id', component:EditCategoriaComponent},
+
+  {path: 'apagar-categoria/:id', component:ApagarCategoriaComponent}
 
 ];
 

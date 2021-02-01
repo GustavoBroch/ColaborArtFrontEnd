@@ -1,6 +1,6 @@
 import { User } from './../model/User';
 import { AuthService } from './../service/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { Produto } from 'src/app/model/Produto';
@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
+import { UserLogin } from '../model/UserLogin';
 
 @Component({
   selector: 'app-inicio',
@@ -19,6 +20,7 @@ export class InicioComponent implements OnInit {
   nome = environment.nomeCompleto
   foto = environment.foto
 
+
   categoria: Categoria = new Categoria()
   produto: Produto = new Produto()
 
@@ -26,41 +28,61 @@ export class InicioComponent implements OnInit {
   listaProdutos: Produto[]
   nomePost: string
 
+  nome = environment.nomeCompleto
+  foto = environment.foto
+  token = environment.token
+
+
+
   user: User = new User()
 
   idUser = environment.id
   idCat: number
 
   constructor(
+
     private router: Router,
     private produtoService: ProdutoService,
     private authService: AuthService,
     private categoriaService: CategoriaService
-  ) {}
+
+  ) { }
 
   ngOnInit() {
     if (environment.token == '') {
-      this.router.navigate(['/entrar'])
-    }
 
-    console.log(this.idUser)
-    this.findByIdUser()
-    this.getAllCategoria()
-    this.getAllProdutos()
+      this.router.navigate(['/home'])
+    }
+    console.log(this.idUser);
+    this.findByIdUser();
+    this.getAllCategoria();
+    this.getAllProdutos();
+    this.getListProduto();
   }
 
   
 
+
   getAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+
+
+  getListProduto() {
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
+
       this.listaProdutos = resp
     });
+    
   }
+
 
   findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
+
       this.user = resp
+
     });
+
   }
 
   getAllCategoria() {
@@ -81,8 +103,11 @@ export class InicioComponent implements OnInit {
     this.produto.tamanho = event.target.value
   }
 
+
   disponivelSelect(event: any) {
+
     this.produto.disponivel = event.target.value
+
   }
 
   publicar() {
@@ -116,3 +141,9 @@ export class InicioComponent implements OnInit {
     }
   }
 }
+      alert('Produto cadastrado realizada com sucesso!!');
+      this.produto = new Produto();
+      this.getAllProdutos();
+    });
+
+
