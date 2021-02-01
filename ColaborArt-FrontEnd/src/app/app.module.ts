@@ -23,7 +23,6 @@ import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.co
     FooterComponent,
     CadastrarComponent,
     InicioComponent,
-    InicioComponent,
     InicioCategoriaComponent,
     CategoriaComponent,
     EditCategoriaComponent,
