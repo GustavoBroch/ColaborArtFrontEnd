@@ -83,13 +83,13 @@
 
     <div class="tab-content mt-5" id="nav-tabContent">
 
-      <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="nav-todosProdutos">
+      <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="nav-todosProdutos-tab">
 
         <div class="row d-flex justify-content-center mt-5 mb-5">
           <div class="col-md-4">
             <div class="form-group">
               <input type="text" class="form-control" id="titulo"
-                placeholder="Digite um título de produtos para pesquisar">
+                placeholder="Digite um título de produtos para pesquisar" [(ngModel)]='nomePost' (keyup)='findByNomeProduto()'>
             </div>
           </div>
         </div>
@@ -100,7 +100,9 @@
           <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
           <div class="card-body">
             <h5 class="card-title">{{item.nome}}</h5>
-            <p class="card-text">{{item.valor}}</p>
+            <p class="card-text">R${{item.valor}}</p>
+            <small class="text-muted"> Descrição: {{item.categoria.descricaoCategoria}}</small>
+            <small class="text-muted"> Tamanho: {{item.tamanho}}</small>
           </div>
         </div>
       </div>
@@ -210,8 +212,8 @@
               <a data-dismiss="modal" routerLink="/categoria"></a>:
             </label>
             <select (change)='disponivelSelect($event)' name="disponivel" id="disponivel" class="form-control">
-              <option value="sim">Sim</option>
-              <option value="nao">Nao</option>
+              <option value="true">Sim</option>
+              <option value="false">Nao</option>
             </select>
           </div>
 

@@ -34,6 +34,10 @@ getByIdCategoria(id: number):Observable<Categoria>{
 
 }
 
+getBytipoProduto(tipoProduto: string): Observable<Categoria[]> {
+  return this.http.get<Categoria[]>(`http://localhost:8080/categoria/produtos/${tipoProduto}`, this.token)
+}
+
 
 putCategoria(categoria: Categoria):Observable<Categoria>{
   return this.http.put<Categoria>('http://localhost:8080/categoria',categoria,this.token)
