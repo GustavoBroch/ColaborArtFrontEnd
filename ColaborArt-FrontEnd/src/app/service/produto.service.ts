@@ -8,16 +8,21 @@ import { Produto } from '../model/Produto';
   providedIn: 'root'
 })
 export class ProdutoService {
-
-  constructor(private http: HttpClient) { }
+  
+  constructor(private http: HttpClient) { 
+  }
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
 
   getAllProdutos(): Observable<Produto[]> {
-    return this.http.get<Produto[]>('http://localhost:8080/produto', this.token)
+    return this.http.get<Produto[]>('http://localhost:8080/produto',this.token)
   }
+
+/*   getAllDestaque(): Observable<Produto[]> {
+    return this.http.get<Produto[]>('http://localhost:8080/produto/destaque')
+  } */
 
   postProduto(produto: Produto): Observable<Produto> {
     return this.http.post<Produto>('http://localhost:8080/produto', produto, this.token)

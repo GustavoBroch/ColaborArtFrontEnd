@@ -16,8 +16,8 @@ export class ApagarCategoriaComponent implements OnInit {
   constructor(private categoriaService : CategoriaService, private router : Router , private route : ActivatedRoute) { }
 
   ngOnInit() {
-    if(environment.token==''){
-      this.router.navigate(['/entrar'])
+    if (environment.token == '') {
+      this.router.navigate(['/home'])
     }
 
     this.idCategoria = this.route.snapshot.params['id']
