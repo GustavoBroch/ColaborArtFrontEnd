@@ -18,16 +18,20 @@ import { AlertasService } from '../service/alertas.service';
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
-  nome = environment.nomeCompleto
-  foto = environment.foto
+  nome = environment.nomeCompleto;
+  foto = environment.foto;
+  token = environment.token;
+  idUser = environment.id;
 
+  categoria: Categoria = new Categoria();
+  produto: Produto = new Produto();
 
-  categoria: Categoria = new Categoria()
-  produto: Produto = new Produto()
+  listaCategoria: Categoria[];
+  listaProdutos: Produto[];
+  nomePost: string;
 
-  listaCategoria: Categoria[]
-  listaProdutos: Produto[]
-  nomePost: string
+  user: User = new User();
+
 
  
   token = environment.token
@@ -40,54 +44,44 @@ export class InicioComponent implements OnInit {
   idCat: number
   getAllProdutos: any;
 
-  constructor(
 
+  constructor(
     private router: Router,
     private produtoService: ProdutoService,
     private authService: AuthService,
-
+    private route: ActivatedRoute,
     private categoriaService: CategoriaService,
-    private alertas:AlertasService
-
-  ) { }
+    private alertas: AlertasService
+  ) {}
 
   ngOnInit() {
     if (environment.token == '') {
-
-      this.router.navigate(['/home'])
+      this.router.navigate(['/home']);
     }
-    console.log(this.idUser);
+
+    
     this.findByIdUser();
     this.getAllCategoria();
-    this.getListProduto();
+
+   
     this.getAllProdutos();
   }
 
-  
-
-
-
-  getListProduto() {
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
-
-      this.listaProdutos = resp
+  getAllProdutos() {
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp;
     });
-    
   }
-
 
   findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
-
-      this.user = resp
-
+      this.user = resp;
     });
-
   }
 
   getAllCategoria() {
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
-      this.listaCategoria = resp
+      this.listaCategoria = resp;
     });
   }
 
@@ -95,55 +89,50 @@ export class InicioComponent implements OnInit {
     this.categoriaService
       .getByIdCategoria(this.idCat)
       .subscribe((resp: Categoria) => {
-        this.categoria = resp
+        this.categoria = resp;
       });
   }
 
   tamanhoSelect(event: any) {
-    this.produto.tamanho = event.target.value
+    this.produto.tamanho = event.target.value;
   }
 
-
   disponivelSelect(event: any) {
-
-    this.produto.disponivel = event.target.value
-
+    this.produto.disponivel = event.target.value;
   }
 
   publicar() {
-    this.categoria.idCategoria = this.idCat
-    this.produto.categoria = this.categoria
+    this.categoria.idCategoria = this.idCat;
+    this.produto.categoria = this.categoria;
 
-    this.user.idUsuario = this.idUser
-    this.produto.usuario = this.user
+    this.user.idUsuario = this.idUser;
+    this.produto.usuario = this.user;
 
     console.log(this.produto);
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
-      this.produto = resp
+      this.produto = resp;
 
-      this.alertas.showAlertSuccess('Produto cadastrado realizada com sucesso!!')
+      this.alertas.showAlertSuccess(
+        'Produto cadastrado realizada com sucesso!!'
+      );
+      this.produto = new Produto();
+      this.getAllProdutos();
+    });
 
-
-    
-
-      this.produto = new Produto()
-    
-    })
   }
 
   findByNomeProduto() {
-
-    if(this.nomePost == ''){
-      this.getAllProdutos()
+    if (this.nomePost == '') {
+      this.getAllProdutos();
     } else {
       this.produtoService
         .getByNomeProduto(this.nomePost)
         .subscribe((resp: Produto[]) => {
-          this.listaProdutos = resp
-        })
+          this.listaProdutos = resp;
+        });
     }
   }
-
+}
 
 }
