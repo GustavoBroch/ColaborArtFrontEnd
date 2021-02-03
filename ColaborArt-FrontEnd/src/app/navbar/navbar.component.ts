@@ -27,18 +27,18 @@ export class NavbarComponent implements OnInit {
   }
 
   scrollMenu(){
-    window.addEventListener('scroll',  (event)=>{
-      let nav = <HTMLElement>document.querySelector('#navbar');
-      //  let navScroll = nav.scrollHeight  o 670 substituiu esse atributo
+    // window.addEventListener('scroll',  (event)=>{
+    //   let nav = <HTMLElement>document.querySelector('#navbar');
+    //   //  let navScroll = nav.scrollHeight  o 670 substituiu esse atributo
    
-      if ( window.scrollY < 670 ) {
-        nav.style.backgroundColor = 'transparent';
-        nav.style.backgroundImage = '';
-      } else {
-        nav.style.backgroundImage = 'url("../../assets/img/navBar.png")';
-        nav.style.transition = 'background-color 200ms linear';
-      }
-    });
+    //   if ( window.scrollY < 670 ) {
+    //     nav.style.backgroundColor = 'transparent';
+    //     nav.style.backgroundImage = '';
+    //   } else {
+    //     nav.style.backgroundImage = 'url("../../assets/img/navBar.png")';
+    //     nav.style.transition = 'background-color 200ms linear';
+    //   }
+    // });
     
   }
 

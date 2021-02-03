@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <div class="container-fluid p-0">
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light py-2 pr-5 pl-5 fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light py-2 pr-5 pl-5 fixed-top ">
 
         <a class="navbar-brand" href="#">
             <img class="m-2" src="../../assets/img/colaborart.png" alt="ColaborArt" width="130px" routerLink="/home">
@@ -61,21 +61,22 @@
 <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
     aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">Entrar</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="usuario">Email:</label>
-                    <input [(ngModel)]='userLogin.email' class="form-control" type="text" name="usuario" id="usuario"
-                        placeholder="Digite seu email">
-                </div>
 
-                <div class="form-group">
+      <div class="modal-content"  id="entrar-modal">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Entrar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="usuario">Email:</label>
+                <input [(ngModel)]= 'userLogin.email' class= "form-control" type="text" name="usuario" id= "usuario"
+                placeholder="Digite seu email">
+
+            </div>
+                    <div class="form-group">
                     <label for="senha">Senha:</label>
                     <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha"
                         placeholder="Digite sua senha">
