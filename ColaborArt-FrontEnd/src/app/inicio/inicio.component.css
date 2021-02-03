@@ -6,6 +6,10 @@
     font-size: 19pt;
 }
 
+.fs-12 {
+    font-size: 12pt;
+}
+
 .borda {
      border: 2px solid white;
 }
@@ -24,7 +28,10 @@
     background-size: cover;
     background-position: center;
     min-height: 700px;
-      
+}
+
+.mr-3 {
+    margin-right: 3em;
 }
 
 

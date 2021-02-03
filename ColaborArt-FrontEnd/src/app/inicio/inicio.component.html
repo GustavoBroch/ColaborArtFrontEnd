@@ -6,41 +6,58 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação"></button>
 
-
   <span class="navbar-toggler-icon"></span>
 
-
-
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
+
+    <ul class="navbar-nav m-left align-items-center">
+
       <li class="nav-item active">
-        <a class="nav-link" href="#">Olá, {{nome}}</a>
+        <a class="nav-link" href="#">Olá, {{nome}} </a>
       </li>
-      <li class="nav-item">
+
+      <li class="nav-item active mr-3">
+        <a href="#">
+          <i class="fa fa-pencil-square-o text-white fs-12" aria-hidden="true"></i>
+        </a>
+      </li>
+
+      <li class="nav-item active">
         <a class="nav-link" href="#">Meus Pedidos</a>
       </li>
-      <li class="nav-item">
+
+      <li class="nav-item active">
         <a class="nav-link" href="#">Fale Conosco</a>
       </li>
+
     </ul>
 
+    <!-- Carrinho de compras e logout -->
     <ul class="navbar-nav ml-auto d-flex align-items-center">
-      <li class="nav-item pl-3">
-        <a class="nav-link" href="#" font-weight-bold text-white fs-16>Sair <i class="fa fa-sign-out"
-            aria-hidden="true"></i></a>
+
+      <li id="carrinho-compras" class="nav-item active ml-4">
+        <a routerLink="#" class="font-weight-bold text-white fs-16">
+          <i class="fa fa-shopping-cart text-white" aria-hidden="true"></i>
+        </a>
       </li>
 
+      <li class="nav-item pl-3">
+        <a class="nav-link font-weight-bold text-white fs-16" href="#">Sair
+          <i class="fa fa-sign-out text-white" aria-hidden="true"></i>
+        </a>
+      </li>
 
     </ul>
+    <!--/Carrinho de compras e logout -->
   </div>
 </nav>
 
-<!-- Bem Vindo -->
+<!-- Bem-vindo -->
 <div class="container-fluid">
   <div class="row bg-dark d-flex align-items-center">
     <div class="col-md-6 d-flex">
       <div class="row d-flex justify-content-center text-white ml-5">
-        <h1 class="fs-54">Seja bem-vindo(a)!</h1>
+        <h1 class="fs-54">Seja bem-vindx!</h1>
         <h5 class="fs-19">Conheça nossos produtos: ColaborArt-se!</h5>
         <div class="row">
           <button class="btn btn-warning mt-4 mr-4">Ver Produto</button>
@@ -90,13 +107,14 @@
           <div class="col-md-4">
             <div class="form-group">
               <input type="text" class="form-control" id="titulo"
-                placeholder="Digite um título de produtos para pesquisar" [(ngModel)]='nomePost' (keyup)='findByNomeProduto()'>
+                placeholder="Digite um título de produtos para pesquisar" [(ngModel)]='nomePost'
+                (keyup)='findByNomeProduto()'>
             </div>
           </div>
         </div>
       </div>
 
-      
+
       <div class="card-columns">
         <div class="card" *ngFor='let item of listaProdutos'>
           <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
@@ -176,17 +194,20 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="nome">Nome:</label>
-            <input [(ngModel)] ='produto.nome' type="text" class="form-control" id="nome" placeholder="Digite o nome do produto" />
+            <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome"
+              placeholder="Digite o nome do produto" />
           </div>
 
           <div class="form-group">
             <label for="preco">Preço:</label>
-            <input [(ngModel)] ='produto.valor' type="number" class="form-control" id="preco" placeholder="Digite o preço do produto" />
+            <input [(ngModel)]='produto.valor' type="number" class="form-control" id="preco"
+              placeholder="Digite o preço do produto" />
           </div>
 
           <div class="form-group">
             <label for="titulo">Descrição:</label>
-            <textarea [(ngModel)] ='produto.descricaoProduto'class="form-control" name="texto" id="texto" rows="3"></textarea>
+            <textarea [(ngModel)]='produto.descricaoProduto' class="form-control" name="texto" id="texto"
+              rows="3"></textarea>
           </div>
 
 
@@ -199,8 +220,8 @@
           </div>
 
           <div class="form-group">
-            <label for="tamanho">Tamanho
-              <a data-dismiss="modal" routerLink="/categoria"></a>:
+            <label for="tamanho">Tamanho:
+              <a data-dismiss="modal" routerLink="/categoria"></a>
             </label>
             <select (change)='tamanhoSelect($event)' name="tamanho" id="tamanho" class="form-control">
               <option value="p">P</option>
@@ -212,8 +233,8 @@
           </div>
 
           <div class="form-group">
-            <label for="disponivel">Produto disponível no estoque
-              <a data-dismiss="modal" routerLink="/categoria"></a>:
+            <label for="disponivel">Produto disponível no estoque:
+              <a data-dismiss="modal" routerLink="/categoria"></a>
             </label>
             <select (change)='disponivelSelect($event)' name="disponivel" id="disponivel" class="form-control">
               <option value="true">Sim</option>
@@ -223,12 +244,12 @@
 
           <div class="form-group">
             <label for="titulo">Escolha uma categoria ou
-              <a data-dismiss="modal" routerLink="/categoria">Cadastre uma nova</a>:
+              <a data-dismiss="modal" routerLink="/categoria">cadastre uma nova</a>:
             </label>
-            <select name="categoria" id="categoria" class="form-control" [(ngModel)] ='idCat'(change)=
-            'findByIdCategoria()'>
+            <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCat'
+              (change)='findByIdCategoria()'>
               <option *ngFor='let item of listaCategoria' value="{{item.idCategoria}}">
-                
+
                 {{item.tipoProduto}}
 
               </option>
