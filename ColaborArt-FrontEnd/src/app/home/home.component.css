@@ -100,3 +100,11 @@
 html {
   scroll-behavior: smooth;
 }
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+#fonte {
+  font-family: 'VT323', monospace;
+}
+
+#fonte_titulo {
+  font-family: 'VT323', monospace;
+}

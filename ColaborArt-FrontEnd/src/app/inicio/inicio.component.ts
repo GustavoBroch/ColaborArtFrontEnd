@@ -29,8 +29,7 @@ export class InicioComponent implements OnInit {
   listaProdutos: Produto[]
   nomePost: string
 
-  nome = environment.nomeCompleto
-  foto = environment.foto
+ 
   token = environment.token
 
 
@@ -39,6 +38,7 @@ export class InicioComponent implements OnInit {
 
   idUser = environment.id
   idCat: number
+  getAllProdutos: any;
 
   constructor(
 
@@ -59,15 +59,12 @@ export class InicioComponent implements OnInit {
     console.log(this.idUser);
     this.findByIdUser();
     this.getAllCategoria();
-    this.getAllProdutos();
     this.getListProduto();
+    this.getAllProdutos();
   }
 
   
 
-
-  getAllProdutos() {
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
 
 
   getListProduto() {
@@ -131,7 +128,7 @@ export class InicioComponent implements OnInit {
     
 
       this.produto = new Produto()
-      this.getAllProdutos()
+    
     })
   }
 
@@ -147,10 +144,6 @@ export class InicioComponent implements OnInit {
         })
     }
   }
+
+
 }
-      alert('Produto cadastrado realizada com sucesso!!');
-      this.produto = new Produto();
-      this.getAllProdutos();
-    });
-
-
