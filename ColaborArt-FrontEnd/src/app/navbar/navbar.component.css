@@ -9,7 +9,8 @@
 }
 
 #contato{
-    font-weight: bold;
+font-weight: bold;
+
 }
 
 #sobre-nos{
@@ -45,6 +46,21 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: max-content;
-      
+    min-height: max-content;    
+}
+
+a{
+    /* font-family: 'Permanent Marker', Cursive; */
+    Font-Family: 'Overpass', Sans-Serif;
+}
+
+
+.btn-amarelo {
+  background-color: #F2E30C;
+}
+
+.btn-amarelo:hover {
+  background-color: #F28B0C;
+  color: rgb(14, 12, 12); /* cor do texto */
+  font-weight: bold;
 }

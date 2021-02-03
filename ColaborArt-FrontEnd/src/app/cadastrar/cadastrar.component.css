@@ -1,11 +1,25 @@
-.btn-laranja {
+/* .btn-laranja {
   background-color: hsl(34, 87%, 49%);
 }
 .btn-laranja:hover {
-  background-color: #f3c281;
-  color: black; /* cor do texto */
+  background-color: #f3c281; */
+  /* color: black; cor do texto */
+  /* font-weight: bold;
+} */
+
+
+.btn-amarelo {
+  background-color: #F2E30C;
+}
+
+.btn-amarelo:hover {
+  background-color: #F28B0C;
+  color: rgb(14, 12, 12); /* cor do texto */
   font-weight: bold;
 }
+
+
+
 
 #img-cad {
   background-image: url("../../assets/img/cadastro1.jpg");

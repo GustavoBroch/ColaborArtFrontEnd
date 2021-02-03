@@ -17,15 +17,6 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
-    this.router.events.subscribe((e) => {
-      if (e instanceof NavigationStart) {
-        if (e.url.includes('/home')) {
-          this.routerShow = true;
-        } else {
-          this.routerShow = false;
-        }
-
-      }
-    });
+    
   }
 }
