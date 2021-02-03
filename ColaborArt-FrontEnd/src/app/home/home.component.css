@@ -1,12 +1,12 @@
 #header {
-    background-image: url("../../assets/img/icone.png");
+    background-image: url("../../assets/img/icone3.png");
     background-color: palegoldenrod;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
     margin: 0;
     width: 100%;
-    height: 750px;
+    height: 950px;
     align-self: top;
 }
 
@@ -100,3 +100,34 @@
 html {
   scroll-behavior: smooth;
 }
+
+.nodes {
+    background-image: url("../../assets/img/testeTexto.png");
+    height: max-content;
+    background-repeat:no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    margin: 3rem 0;
+    width: max-content;
+}
+
+.separador {
+    background-image: url(https://chico-rei.imgix.net/images/site/seguranca/art_nodes.svg?auto=format&lossless=1);
+    height: 3rem;
+    background-repeat: repeat-x;
+    background-position-y: center;
+    margin: 3rem 0;
+}
+
+
+
+/* .teste {
+    background-image: url("../../assets/img/teste2Texto.png");
+    height: max-content;
+    background-repeat:no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    margin: 3rem 0;
+    width: max-content;
+} */
+
