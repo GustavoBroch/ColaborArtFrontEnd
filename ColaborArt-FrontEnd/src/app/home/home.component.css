@@ -101,6 +101,14 @@ html {
   scroll-behavior: smooth;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+#fonte {
+  font-family: 'VT323', monospace;
+}
+
+
+=======
+
 .nodes {
     background-image: url("../../assets/img/testeTexto.png");
     height: max-content;
@@ -130,4 +138,5 @@ html {
     margin: 3rem 0;
     width: max-content;
 } */
+
 

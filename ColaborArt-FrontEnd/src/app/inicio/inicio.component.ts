@@ -32,7 +32,18 @@ export class InicioComponent implements OnInit {
 
   user: User = new User();
 
-  idCat: number;
+
+ 
+  token = environment.token
+
+
+
+  user: User = new User()
+
+  idUser = environment.id
+  idCat: number
+  getAllProdutos: any;
+
 
   constructor(
     private router: Router,
@@ -51,6 +62,8 @@ export class InicioComponent implements OnInit {
     
     this.findByIdUser();
     this.getAllCategoria();
+
+   
     this.getAllProdutos();
   }
 
@@ -103,10 +116,10 @@ export class InicioComponent implements OnInit {
       this.alertas.showAlertSuccess(
         'Produto cadastrado realizada com sucesso!!'
       );
-
       this.produto = new Produto();
       this.getAllProdutos();
     });
+
   }
 
   findByNomeProduto() {
@@ -122,6 +135,4 @@ export class InicioComponent implements OnInit {
   }
 }
 
-
-
-
+}
