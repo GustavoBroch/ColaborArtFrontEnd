@@ -23,6 +23,7 @@ export class InicioComponent implements OnInit {
   token = environment.token;
   idUser = environment.id;
 
+  user: User = new User();
   categoria: Categoria = new Categoria();
   produto: Produto = new Produto();
 
@@ -30,25 +31,12 @@ export class InicioComponent implements OnInit {
   listaProdutos: Produto[];
   nomePost: string;
 
-  user: User = new User();
-
-
- 
-  token = environment.token
-
-
-
-  user: User = new User()
-
-  idUser = environment.id
   idCat: number
-  getAllProdutos: any;
-
-
+  
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
-    private authService: AuthService,
+    public authService: AuthService,
     private route: ActivatedRoute,
     private categoriaService: CategoriaService,
     private alertas: AlertasService
@@ -58,12 +46,9 @@ export class InicioComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/home']);
     }
-
     
     this.findByIdUser();
-    this.getAllCategoria();
-
-   
+    this.getAllCategoria();  
     this.getAllProdutos();
   }
 
@@ -133,6 +118,4 @@ export class InicioComponent implements OnInit {
         });
     }
   }
-}
-
 }

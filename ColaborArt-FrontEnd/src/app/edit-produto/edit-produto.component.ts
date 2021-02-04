@@ -1,29 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Categoria } from 'src/app/model/Categoria';
-import { Produto } from 'src/app/model/Produto';
-import { AlertasService } from 'src/app/service/alertas.service';
-import { CategoriaService } from 'src/app/service/categoria.service';
-import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../model/Categoria';
+import { Produto } from '../model/Produto';
+import { AlertasService } from '../service/alertas.service';
+import { CategoriaService } from '../service/categoria.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
-  selector: 'app-produto',
-  templateUrl: './produto.component.html',
-  styleUrls: ['./produto.component.css']
+  selector: 'app-edit-produto',
+  templateUrl: './edit-produto.component.html',
+  styleUrls: ['./edit-produto.component.css']
 })
-export class ProdutoComponent implements OnInit {
+export class EditProdutoComponent implements OnInit {
 
   produto: Produto = new Produto()
   categoria: Categoria = new Categoria()
   listaCategoria: Categoria[]
   idCat: number
 
-  constructor(private router: Router, private route: ActivatedRoute, private produtoService: ProdutoService, private categoriaService: CategoriaService,
-    private alertas: AlertasService) { }
+
+  constructor(
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private produtoService: ProdutoService, 
+    private categoriaService: CategoriaService,
+    private alertas: AlertasService
+  ) { }
 
   ngOnInit() {
-
     window.scroll(0, 0)
     if (environment.token == '') {
       this.router.navigate(['/inicio'])
@@ -32,7 +37,6 @@ export class ProdutoComponent implements OnInit {
     this.findByIdProduto(id)
     this.findAllCategoria()
   }
-
 
   findByIdProduto(id: number) {
     this.produtoService.getByIdProduto(id).subscribe((resp: Produto) => {
@@ -61,5 +65,4 @@ export class ProdutoComponent implements OnInit {
       this.router.navigate(['/inicio'])
     })
   }
-
 }

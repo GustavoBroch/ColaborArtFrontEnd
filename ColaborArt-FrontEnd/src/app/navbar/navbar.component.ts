@@ -22,8 +22,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0);
-
-    this.scrollMenu();
+    //this.scrollMenu();
   }
 
   scrollMenu(){
@@ -47,11 +46,14 @@ export class NavbarComponent implements OnInit {
   entrar() {
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
-      console.log(resp)
+
+     
       environment.token = this.userLogin.token
       environment.foto = this.userLogin.foto
       environment.nomeCompleto = this.userLogin.nomeCompleto
       environment.id = this.userLogin.idUserLogin
+      environment.tipo = this.userLogin.tipo
+      
       this.router.navigate(['/inicio'])
       this.alertas.showAlertSuccess('Logado com sucesso!')
     }, erro => {
