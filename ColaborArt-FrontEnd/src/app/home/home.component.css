@@ -1,5 +1,5 @@
-h3{
-  font-family: 'Permanent Marker', Cursive;
+h3 {
+  font-family: "Permanent Marker", Cursive;
 }
 
 .anchor {
@@ -11,25 +11,27 @@ h3{
   visibility: hidden;
 }
 
-
+.coloracao:hover {
+  color: skyblue !important;
+}
 
 #header {
-    background-image: url("../../assets/img/icone3.png");
-    background-color: palegoldenrod;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    margin: 0;
-    width: 100%;
-    height: 950px;
-    align-self: top;
+  background-image: url("../../assets/img/icone3.png");
+  background-color: palegoldenrod;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  margin: 0;
+  width: 100%;
+  height: 950px;
+  align-self: top;
 }
 
 .card {
-    border: 0;
-    text-align: center;
-    padding-left: 5px;
-    padding-right: 5px;
+  border: 0;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .carousel-control-prev-icon,
@@ -41,15 +43,14 @@ h3{
   background-image: none;
 }
 
-.carousel-control-next-icon:after
-{
-  content: '>';
+.carousel-control-next-icon:after {
+  content: ">";
   font-size: 55px;
   color: black;
 }
 
 .carousel-control-prev-icon:after {
-  content: '<';
+  content: "<";
   font-size: 55px;
   color: black;
 }
@@ -67,9 +68,9 @@ h3{
 }
 
 .div-em-colunas {
-  -webkit-column-count:2; /* Chrome, Safari, Opera */
-  -moz-column-count:2;    /* Firefox */
-  column-count:2;         /* padrão */
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2; /* padrão */
 }
 
 .mt-0 {
@@ -94,8 +95,8 @@ h3{
 }
 
 .my {
-  margin-top: 1rem!important;
-  margin-bottom: 1rem!important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
 }
 
 #campaign-projects img {
@@ -103,8 +104,8 @@ h3{
 }
 
 .px-4 {
-  padding-left: 2rem!important;
-  padding-right: 2rem!important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }
 
 .tm-redesocial {
@@ -116,34 +117,27 @@ html {
   scroll-behavior: smooth;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 #fonte {
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
 }
 
-
-=======
-
 .nodes {
-    background-image: url("../../assets/img/testeTexto.png");
-    
-    background-repeat:no-repeat;
-    background-position-y: center;
-    background-position-x: center;
-    background-size: cover;
-  
-    
+  background-image: url("../../assets/img/testeTexto.png");
+
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+  background-size: cover;
 }
 
 .separador {
-    background-image: url(https://chico-rei.imgix.net/images/site/seguranca/art_nodes.svg?auto=format&lossless=1);
-    height: 3rem;
-    background-repeat: repeat-x;
-    background-position-y: center;
-    margin: 3rem 0;
+  background-image: url(https://chico-rei.imgix.net/images/site/seguranca/art_nodes.svg?auto=format&lossless=1);
+  height: 3rem;
+  background-repeat: repeat-x;
+  background-position-y: center;
+  margin: 3rem 0;
 }
-
-
 
 /* .teste {
     background-image: url("../../assets/img/teste2Texto.png");
@@ -154,5 +148,3 @@ html {
     margin: 3rem 0;
     width: max-content;
 } */
-
-

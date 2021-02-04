@@ -61,4 +61,8 @@ export class NavbarComponent implements OnInit {
     })
   }
 
+  atualizar(){
+    this.alertas.showAlertSuccess('Comentario enviado com sucesso , entraremos em contato atraves do seu e-mail')
+  }
+
 }
