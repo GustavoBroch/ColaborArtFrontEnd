@@ -1,3 +1,18 @@
+h3{
+  font-family: 'Permanent Marker', Cursive;
+}
+
+.anchor {
+  display: block;
+  height: 35px;
+  /* same height as header/ */
+  margin-top: -35px;
+  /* /same height as header/ */
+  visibility: hidden;
+}
+
+
+
 #header {
   background-image: url("../../assets/img/icone3.png");
   background-color: palegoldenrod;
@@ -109,14 +124,13 @@ html {
   color: skyblue !important;
 }
 
-======= .nodes {
-  background-image: url("../../assets/img/testeTexto.png");
-  height: max-content;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: center;
-  margin: 3rem 0;
-  width: max-content;
+.nodes {
+    background-image: url("../../assets/img/testeTexto.png");
+    
+    background-repeat:no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    background-size: cover;
 }
 
 .separador {
