@@ -35,6 +35,10 @@ export class InicioComponent implements OnInit {
 
 
   idCat: number
+  
+
+  idCat: number
+
 
 
 
