@@ -1,5 +1,5 @@
-h3{
-  font-family: 'Permanent Marker', Cursive;
+h3 {
+  font-family: "Permanent Marker", Cursive;
 }
 
 .anchor {
@@ -11,7 +11,9 @@ h3{
   visibility: hidden;
 }
 
-
+.coloracao:hover {
+  color: skyblue !important;
+}
 
 #header {
   background-image: url("../../assets/img/icone3.png");
@@ -119,11 +121,6 @@ html {
 #fonte {
   font-family: "VT323", monospace;
 }
-
-.coloracao:hover {
-  color: skyblue !important;
-}
-
 .nodes {
     background-image: url("../../assets/img/testeTexto.png");
     
@@ -131,6 +128,7 @@ html {
     background-position-y: center;
     background-position-x: center;
     background-size: cover;
+
 }
 
 .separador {
