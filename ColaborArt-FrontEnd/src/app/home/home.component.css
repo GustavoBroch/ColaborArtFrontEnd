@@ -121,14 +121,14 @@ html {
 #fonte {
   font-family: "VT323", monospace;
 }
-
 .nodes {
-  background-image: url("../../assets/img/testeTexto.png");
+    background-image: url("../../assets/img/testeTexto.png");
+    
+    background-repeat:no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    background-size: cover;
 
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: center;
-  background-size: cover;
 }
 
 .separador {

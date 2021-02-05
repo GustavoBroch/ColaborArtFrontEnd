@@ -31,6 +31,11 @@
 
                 <li class="nav-item active mr-2">
                     <a class="nav-link" href="#">Contato<span class="sr-only">(current)</span></a>
+
+
+                <li id="contato" class="nav-item active mr-2">
+                    <a class="nav-link" data-toggle="modal" data-target="#ExemploModalCentralizado2">Contato<span class="sr-only">(current)</span></a>
+
                 </li>
 
             </ul>
@@ -96,6 +101,65 @@
             </div>
 
 
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="ExemploModalCentralizado2" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+
+        <div class="modal-content" id="entrar-modal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="TituloModalCentralizado">Entre em contato conosco</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="usuario">Nome</label>
+                    <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Digite seu nome ">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="text" name="email" id="email" placeholder="Digite seu email">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1"> Assunto:</label>
+                    <select class="form-control" id="assunto">
+                        <option>Escolha uma opção</option>
+                        <option>Elogio</option>
+                        <option>Dúvida</option>
+                        <option>Troca</option>
+                        <option>Pedido</option>
+                        <option>Reclamação</option>
+                        <option>Outros</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Comentário/Sugestao:</label>
+                    <textarea class="form-control" name="texto" id="texto" rows="4"></textarea>
+
+                </div>
+
+
+
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button (click)='atualizar()' type="submit" class="btn btn-success" data-dismiss="modal">Enviar</button>
+
+                <button type="button" class="btn btn-danger mr-3" data-dismiss="modal">Fechar</button>
+
+
+            </div>
         </div>
     </div>
 </div>
