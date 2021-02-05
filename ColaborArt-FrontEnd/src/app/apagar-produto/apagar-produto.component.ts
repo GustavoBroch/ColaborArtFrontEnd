@@ -1,34 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Categoria } from 'src/app/model/Categoria';
-import { Produto } from 'src/app/model/Produto';
-import { AlertasService } from 'src/app/service/alertas.service';
-import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../model/Categoria';
+import { Produto } from '../model/Produto';
+import { AlertasService } from '../service/alertas.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
-  selector: 'app-produto',
-  templateUrl: './produto.component.html',
-  styleUrls: ['./produto.component.css']
+  selector: 'app-apagar-produto',
+  templateUrl: './apagar-produto.component.html',
+  styleUrls: ['./apagar-produto.component.css']
 })
-export class ProdutoComponent implements OnInit {
+export class ApagarProdutoComponent implements OnInit {
 
   produto : Produto = new Produto()
   categoria: Categoria = new Categoria()
   listaCategoria : Categoria[]
   idCat : number
   idProd : number
-  
-  constructor(private router : Router , 
+
+  constructor(
+    private router : Router , 
     private route : ActivatedRoute, 
     private produtoService : ProdutoService,
-    private alertas:AlertasService ) { }
+    private alertas:AlertasService
+  ) { }
 
   ngOnInit() {
-
     window.scroll(0,0)
+
     if(environment.token == ''){
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/home'])
     }
    this.idProd = this.route.snapshot.params['id']
     this.findByIdProduto(this.idProd)
@@ -56,5 +58,5 @@ export class ProdutoComponent implements OnInit {
       this.router.navigate(['/inicio'])
     })
   }
-
+  
 }

@@ -36,4 +36,15 @@ export class AuthService {
     return ok
   }
 
+  artista() {
+    let ok: boolean = false
+
+    if (environment.tipo == 'artista') {
+      ok = true
+    }
+
+    return ok
+  }
+
+
 }

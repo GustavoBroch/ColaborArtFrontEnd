@@ -12,12 +12,12 @@ export class ProdutoService {
   constructor(private http: HttpClient) { 
   }
   token = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
+    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token'))
   }
 
 
   getAllProdutos(): Observable<Produto[]> {
-    return this.http.get<Produto[]>('http://localhost:8080/produto',this.token)
+    return this.http.get<Produto[]>('http://localhost:8080/produto')
   }
 
 /*   getAllDestaque(): Observable<Produto[]> {
@@ -30,7 +30,7 @@ export class ProdutoService {
   }
 
   getByIdProduto(id: number): Observable<Produto> {
-    return this.http.get<Produto>(`http://localhost:8080/produto${id}`, this.token)
+    return this.http.get<Produto>(`http://localhost:8080/${id}`)
   }
 
 
@@ -44,6 +44,6 @@ export class ProdutoService {
   }
 
   deleteProduto(id: number) {
-    return this.http.delete(`http://localhost:8080/produto${id}`, this.token)
+    return this.http.delete(`http://localhost:8080/produto/${id}`, this.token)
   }
 }

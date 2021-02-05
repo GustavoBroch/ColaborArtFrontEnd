@@ -20,6 +20,7 @@ export class ApagarCategoriaComponent implements OnInit {
     private alertas: AlertasService) { }
 
   ngOnInit() {
+    window.scroll(0,0)
     if (environment.token == '') {
       this.router.navigate(['/home'])
     }

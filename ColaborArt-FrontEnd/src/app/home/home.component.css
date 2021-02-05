@@ -1,7 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+h3{
+  font-family: 'Permanent Marker', Cursive;
+
 h3 {
   font-family: "Permanent Marker", Cursive;
-}
 
+}
+.scrolling-wrapper{
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: #333;
+  }
 .anchor {
   display: block;
   height: 35px;
@@ -117,10 +127,18 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 #fonte {
   font-family: "VT323", monospace;
 }
+
+
+
+
 
 .nodes {
     background-image: url("../../assets/img/testeTexto.png");

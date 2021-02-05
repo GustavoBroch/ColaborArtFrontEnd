@@ -22,6 +22,7 @@ export class CadastrarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0)
+
   }
 
   confirmSenha(event: any) {
@@ -41,7 +42,7 @@ export class CadastrarComponent implements OnInit {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
 
-        this.router.navigate(['/inicio']) /* confirmar nome da rota - login/logar ; entrar ; home ; etc */
+        this.router.navigate(['/home']) /* confirmar nome da rota - login/logar ; entrar ; home ; etc */
         this.alertas.showAlertSuccess('Cliente cadastrado com sucesso !')
       }
       )

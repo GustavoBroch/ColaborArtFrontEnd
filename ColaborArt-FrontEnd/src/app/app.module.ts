@@ -19,6 +19,8 @@ import { EditCategoriaComponent } from './edit-categoria/edit-categoria.componen
 import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { from } from 'rxjs';
+import { EditProdutoComponent } from './edit-produto/edit-produto.component';
+import { ApagarProdutoComponent } from './apagar-produto/apagar-produto.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { from } from 'rxjs';
     EditCategoriaComponent,
     ApagarCategoriaComponent,
     AlertasComponent,
+    EditProdutoComponent,
+    ApagarProdutoComponent,
   ],
   imports: [
     BrowserModule,

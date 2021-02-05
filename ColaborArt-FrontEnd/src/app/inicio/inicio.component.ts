@@ -23,6 +23,7 @@ export class InicioComponent implements OnInit {
   token = environment.token;
   idUser = environment.id;
 
+  user: User = new User();
   categoria: Categoria = new Categoria();
   produto: Produto = new Produto();
 
@@ -30,14 +31,17 @@ export class InicioComponent implements OnInit {
   listaProdutos: Produto[];
   nomePost: string;
 
+
+  idCat: number
+  
+
   user: User = new User();
 
 
 
 
-  idCat: number
-  
 
+  
 
 
 
@@ -48,20 +52,27 @@ export class InicioComponent implements OnInit {
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
-    private authService: AuthService,
+    public authService: AuthService,
     private route: ActivatedRoute,
     private categoriaService: CategoriaService,
     private alertas: AlertasService
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
+    
     if (environment.token == '') {
       this.router.navigate(['/home']);
     }
 
+    
+    this.findByIdUser();
+    this.getAllCategoria();  
+
 
     this.findByIdUser();
     this.getAllCategoria();
+
 
 
     this.getAllProdutos();
@@ -133,5 +144,17 @@ export class InicioComponent implements OnInit {
         });
     }
   }
+
+  sair(){
+    localStorage.clear()
+    environment.token = ""
+    environment.foto = ""
+    environment.id = 0
+    environment.nomeCompleto = "",
+    environment.tipo = ""
+    this.router.navigate(["/home"])
+  }
+}
+
 }
 
