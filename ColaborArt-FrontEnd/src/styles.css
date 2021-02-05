@@ -4,3 +4,23 @@
 * {
      font-family: 'VT323', monospace;
 } */
+
+* .titulo{
+Font-Family: 'Permanent Marker', Cursive;
+
+}
+
+*.texto {
+Font-Family: 'Overpass', Sans-Serif;
+}
+
+
+html {
+     scroll-behavior: smooth;
+}
+
+/* Font-Size: 55px; */
+
+
+
+/* Font-Size: 17px; */

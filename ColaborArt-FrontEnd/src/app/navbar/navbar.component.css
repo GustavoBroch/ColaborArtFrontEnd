@@ -1,50 +1,65 @@
-.nav-link{
-    /* text-shadow: 2px 2px 4px #000000;  */
-    text-transform: uppercase;
-    font-size: 18pt;
+.nav-link {
+  /* text-shadow: 2px 2px 4px #000000;  */
+  text-transform: uppercase;
+  font-size: 18pt;
 }
 
-#navbar{
-    background-image: url("../../assets/img/navBar.png");
+#navbar {
+  background-image: url("../../assets/img/navBar.png");
 }
 
 #contato{
-    font-weight: bold;
+font-weight: bold;
+
 }
 
-#sobre-nos{
-    font-weight: bold;
+#sobre-nos {
+  font-weight: bold;
 }
 
-
-#entrar{
-    font-weight: bold;
+#entrar {
+  font-weight: bold;
 }
 
-
-#produtos{
-    font-weight: bold;
+#produtos {
+  font-weight: bold;
 }
 
-#ongs{
-    font-weight: bold;
+#ongs {
+  font-weight: bold;
 }
 
-#artistas{
-    font-weight: bold;
+#artistas {
+  font-weight: bold;
 }
 
-
-.fs-20{
-    font-size: 20pt;
+.fs-20 {
+  font-size: 20pt;
 }
-
 
 #entrar-modal {
-    background-image: url("../../assets/img/testeCad.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    min-height: max-content;
-      
+
+  background-image: url("../../assets/img/testeCad.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: max-content;
+
+}
+
+a{
+    /* font-family: 'Permanent Marker', Cursive; */
+    Font-Family: 'Overpass', Sans-Serif;
+}
+
+
+.btn-amarelo {
+  background-color: #F2E30C;
+}
+
+.btn-amarelo:hover {
+  background-color: #F28B0C;
+  color: rgb(14, 12, 12); /* cor do texto */
+  font-weight: bold;
+
 }

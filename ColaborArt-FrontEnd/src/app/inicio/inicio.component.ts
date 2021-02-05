@@ -32,8 +32,16 @@ export class InicioComponent implements OnInit {
 
   user: User = new User();
 
+
   idCat: number
   
+
+
+
+
+
+
+
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
@@ -123,3 +131,4 @@ export class InicioComponent implements OnInit {
     }
   }
 }
+
