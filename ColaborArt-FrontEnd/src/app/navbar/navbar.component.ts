@@ -61,4 +61,12 @@ export class NavbarComponent implements OnInit {
     })
   }
 
-}
+  atualizar(){
+   
+      this.alertas.showAlertSuccess('Comentario enviado , entraremos em contato por email!')
+      this.router.navigate(['/home'])
+      
+    }
+  }
+
+
