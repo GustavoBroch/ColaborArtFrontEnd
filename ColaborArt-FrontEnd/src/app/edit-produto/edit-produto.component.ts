@@ -16,8 +16,8 @@ export class EditProdutoComponent implements OnInit {
 
   produto: Produto = new Produto()
   categoria: Categoria = new Categoria()
+
   listaCategoria: Categoria[]
-  
   idCat: number
 
 
@@ -61,8 +61,10 @@ export class EditProdutoComponent implements OnInit {
   atualizar() {
     this.categoria.idCategoria = this.idCat
     this.produto.categoria = this.categoria
-
+  
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto) => {
+      this.produto = resp
+      console.log(resp)
       this.alertas.showAlertSuccess('Produto atualizado com sucesso!')
       this.router.navigate(['/inicio'])
     })

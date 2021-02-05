@@ -22,32 +22,12 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0);
-    //this.scrollMenu();
   }
-
-  scrollMenu(){
-    // window.addEventListener('scroll',  (event)=>{
-    //   let nav = <HTMLElement>document.querySelector('#navbar');
-    //   //  let navScroll = nav.scrollHeight  o 670 substituiu esse atributo
-   
-    //   if ( window.scrollY < 670 ) {
-    //     nav.style.backgroundColor = 'transparent';
-    //     nav.style.backgroundImage = '';
-    //   } else {
-    //     nav.style.backgroundImage = 'url("../../assets/img/navBar.png")';
-    //     nav.style.transition = 'background-color 200ms linear';
-    //   }
-    // });
-    
-  }
-
-  
 
   entrar() {
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
 
-     
       localStorage.setItem('token', this.userLogin.token )
       environment.token = this.userLogin.token
       environment.foto = this.userLogin.foto
@@ -64,20 +44,14 @@ export class NavbarComponent implements OnInit {
     })
   }
   
-
   atualizar(){
-
     this.alertas.showAlertSuccess('Comentario enviado com sucesso , entraremos em contato atraves do seu e-mail')
+    this.router.navigate(['/home'])
   }
-
 }
-
-   
-      this.alertas.showAlertSuccess('Comentario enviado , entraremos em contato por email!')
-      this.router.navigate(['/home'])
+ 
+     
       
-    }
-  }
-
+ 
 
 

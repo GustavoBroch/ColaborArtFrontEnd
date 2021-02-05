@@ -30,24 +30,8 @@ export class InicioComponent implements OnInit {
   listaCategoria: Categoria[];
   listaProdutos: Produto[];
   nomePost: string;
-
-
   idCat: number
-  
-
-  user: User = new User();
-
-
-
-
-
-  
-
-
-
-
-
-
+  categoriaPost:string;
 
   constructor(
     private router: Router,
@@ -64,17 +48,8 @@ export class InicioComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/home']);
     }
-
-    
     this.findByIdUser();
     this.getAllCategoria();  
-
-
-    this.findByIdUser();
-    this.getAllCategoria();
-
-
-
     this.getAllProdutos();
   }
 
@@ -115,11 +90,8 @@ export class InicioComponent implements OnInit {
   publicar() {
     this.categoria.idCategoria = this.idCat;
     this.produto.categoria = this.categoria;
-
     this.user.idUsuario = this.idUser;
     this.produto.usuario = this.user;
-
-    console.log(this.produto);
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
@@ -145,6 +117,17 @@ export class InicioComponent implements OnInit {
     }
   }
 
+  findByCategoria() {
+    if (this.categoriaPost == '') {
+      this.getAllCategoria();
+    } else {
+      this.categoriaService.getBytipoProduto(this.categoriaPost)
+        .subscribe((resp: Categoria[]) => {
+          this.listaCategoria = resp;
+        });
+    }
+  }
+
   sair(){
     localStorage.clear()
     environment.token = ""
@@ -156,5 +139,4 @@ export class InicioComponent implements OnInit {
   }
 }
 
-}
 
