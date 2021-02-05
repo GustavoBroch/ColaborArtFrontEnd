@@ -1,22 +1,67 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="#"><img src="{{foto}}" class="img-fluid rounded-circle borda" width="60px"
+            height="60px" alt="Blank"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação"></button>
+
+    <span class="navbar-toggler-icon"></span>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+        <ul class="navbar-nav m-left align-items-center">
+
+            <li class="nav-item active">
+                <a class="nav-link text-warning fonte-texto" href="#">Olá, {{nome}} </a>
+            </li>
+
+            <li class="nav-item active mr-3">
+                <a href="#">
+                    <i class="fa fa-pencil-square-o text-white fs-12" aria-hidden="true"></i>
+                </a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link text-warning fonte-texto" href="#">Meus Pedidos</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link text-warning fonte-texto" href="#">Fale Conosco</a>
+            </li>
+
+        </ul>
+
+        
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
+
+            <li class="nav-item pl-3">
+                <a class="nav-link fonte-texto font-weight-bold text-warning fs-16" href="#">Sair
+                    <i class="fa fa-sign-out text-white fs-16" aria-hidden="true"></i>
+                </a>
+            </li>
+
+        </ul>
+        >
+    </div>
+</nav> -->
+
 <div class="container-fluid">
 
-    <div class="row bg-dark">
+    <div class="row bg-warning">
 
-        <div class="col-md-12 text-white">
+        <div class="col-md-12 ">
 
-            <h1 class="mt-4 text-center">
-                Olá, artista! Seja bem-vindx!</h1>
-            <hr color="dark">
+            <h1 class="mt-4 mb-4 text-center fonte-titulo fs-50">
+                Olá, artista! <p>Seja bem-vindx!</p></h1>
 
-            <div class="container">
-                <h5 class="fs-18 text-center">
+            <div class="container mb-5">
+                <h5 class="fs-19 text-center fonte-texto">
                     Neste espaço, você consegue visualizar todas as categorias de produtos
                     cadastradas, além de editar informações sobre elas e acrescentar novas opções.
                 </h5>
             </div>
 
         </div>
-
     </div>
 </div>
 
@@ -24,34 +69,30 @@
 <div class="container">
 
     <div class="row mt-5">
-
-        <div class="col-md-12 text-center text-dark bg-warning">
-
-            <h1 class="fs-54 text-center">Categorias</h1>
-
+        <div class="fs-16 text-center fonte-titulo">
+            <h2>Categorias:</h2>
         </div>
-
     </div>
+
 
     <div class="row d-flex justify-content-center mt-4 mb-5">
 
-        <div class="col-md-5">
+        <div class="col-md-12">
 
             <div class="row d-flex justify-content-center">
 
-
-                <h5 class="fs-18 text-center">
-                    Veja aqui todos as categorias cadastradas ou cadastre um nova:
+                <h5 class="fs-18 text-center fonte-texto">
+                    Veja aqui todas as categorias já cadastradas e/ou cadastre uma nova:
                 </h5>
 
-                <div class="col-md-6">
-                    <div class="form-group">
+                <div class="col-md-6 mt-3">
+                    <div class="form-group fonte-texto">
                         <label>Categoria</label>
                         <input [(ngModel)]='categoria.tipoProduto' type="text" class="form-control" id="tipoProduto"
-                            placeholder="Ex: Camiseta" >
+                            placeholder="Ex: Camiseta">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group fonte-texto">
                         <label for="descricaoCategoria">Descrição</label>
                         <textarea [(ngModel)]='categoria.descricaoCategoria' class="form-control"
                             name="descricaoCategoria" id="descricaoCategoria" rows="3">
@@ -62,7 +103,7 @@
             </div>
 
             <div class="row d-flex justify-content-center">
-                <button (click)='cadastrarCategoria()' class="btn btn-warning">
+                <button (click)='cadastrarCategoria()' class="btn btn-warning fonte-texto">
                     Cadastrar
                 </button>
             </div>
@@ -73,12 +114,12 @@
     </div>
 
     <div class="row mt-5">
-        <div class="col-md-12 text-center text-dark bg-warning">
-            <h2>Todos as categorias:</h2>
+        <div class="fs-16 text-center fonte-titulo">
+            <h2>Todas as categorias:</h2>
         </div>
     </div>
 
-    <div class="row mt-3 mb-5 d-flex justify-content-center">
+    <div class="row mt-3 mb-5 d-flex justify-content-center fonte-texto">
         <div class="col-md-6">
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -88,7 +129,7 @@
                             <th scope="col">Cód. de cadastro</th>
                             <th scope="col">Categoria</th>
                             <th scope="col">Descrição</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>
@@ -105,7 +146,7 @@
                             <th class="text-center" scope="row">{{categoria.idCategoria}}</th>
                             <td>{{categoria.tipoProduto}}</td>
                             <td>{{categoria.descricaoCategoria}}</td>
-                            
+
                         </tr>
                     </tbody>
                 </table>

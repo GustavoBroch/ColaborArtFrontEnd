@@ -33,11 +33,11 @@ export class InicioComponent implements OnInit {
   user: User = new User();
 
 
-
   idCat: number
   
 
-  idCat: number
+
+
 
 
 
@@ -49,18 +49,18 @@ export class InicioComponent implements OnInit {
     private route: ActivatedRoute,
     private categoriaService: CategoriaService,
     private alertas: AlertasService
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (environment.token == '') {
       this.router.navigate(['/home']);
     }
 
-    
+
     this.findByIdUser();
     this.getAllCategoria();
 
-   
+
     this.getAllProdutos();
   }
 
@@ -131,5 +131,4 @@ export class InicioComponent implements OnInit {
     }
   }
 }
-
 
