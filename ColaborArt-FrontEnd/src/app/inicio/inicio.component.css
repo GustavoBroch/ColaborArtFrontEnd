@@ -2,6 +2,10 @@
     font-size: 52pt;
 }
 
+.fs-17 {
+    font-size: 17pt;
+}
+
 .fs-19 {
     font-size: 19pt;
 }
@@ -34,5 +38,19 @@
     margin-right: 3em;
 }
 
+.fundo-geral {
+    background-color: palegoldenrod;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.fonte-titulo {
+    Font-Family: 'Permanent Marker', Cursive;
+    Font-Size: 75px;
+}
+
+.fonte-texto {
+    Font-Family: 'Overpass', Sans-Serif;
+}
 
 
