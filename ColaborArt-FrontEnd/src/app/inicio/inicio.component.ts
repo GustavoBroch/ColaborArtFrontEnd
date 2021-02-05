@@ -34,15 +34,8 @@ export class InicioComponent implements OnInit {
 
 
  
-  token = environment.token
-
-
-
-  user: User = new User()
-
-  idUser = environment.id
   idCat: number
-  getAllProdutos: any;
+  
 
 
   constructor(
@@ -133,6 +126,4 @@ export class InicioComponent implements OnInit {
         });
     }
   }
-}
-
 }
