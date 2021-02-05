@@ -33,8 +33,11 @@ export class InicioComponent implements OnInit {
   user: User = new User();
 
 
+
+
   idCat: number
   
+
 
 
 
