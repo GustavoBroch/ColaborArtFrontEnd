@@ -48,6 +48,7 @@ export class NavbarComponent implements OnInit {
       this.userLogin = resp
 
      
+      localStorage.setItem('token', this.userLogin.token )
       environment.token = this.userLogin.token
       environment.foto = this.userLogin.foto
       environment.nomeCompleto = this.userLogin.nomeCompleto
@@ -62,5 +63,6 @@ export class NavbarComponent implements OnInit {
       }
     })
   }
+  
 
 }

@@ -42,7 +42,7 @@
       </li>
 
       <li class="nav-item pl-3">
-        <a class="nav-link font-weight-bold text-white fs-16" href="#">Sair
+        <a class="nav-link font-weight-bold text-white fs-16" (click)= 'sair()'>Sair
           <i class="fa fa-sign-out text-white" aria-hidden="true"></i>
         </a>
       </li>
@@ -67,7 +67,7 @@
 
       <div class="row d-flex justify-content-center mt-3 mb-5">
         <div class="col-md-6">
-          <button class="btn btn-warning mr-2">Ver Produto</button>
+          <button class="btn btn-warning mr-2" href="#meusProdutos">Ver Produto</button>
           <button *ngIf='authService.artista()' class="btn btn-warning" data-toggle="modal"
             data-target="#novoProduto">Novo Produto</button>
         </div>
@@ -96,7 +96,7 @@
       <a *ngIf='authService.artista()' (click)='findByIdUser()'
         class="nav-item nav-link text-secondary font-weight-bold" id="nav-meusProdutos-tab" data-toggle="tab"
         href="#meusProdutos" role="tab" aria-controls="nav-meusProdutos" aria-selected="false">
-        Meus Produtos
+        Meus Produtos Cadastrados
       </a>
 
       <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-produtosCategoria-tab" data-toggle="tab"
@@ -130,6 +130,7 @@
             <p class="card-text">R${{item.valor}}</p>
             <small class="text-muted"> Descrição: {{item.categoria.descricaoCategoria}}</small>
             <small class="text-muted"> Tamanho: {{item.tamanho}}</small>
+            <div></div>
           </div>
         </div>
       </div>
@@ -283,8 +284,7 @@
           <label for="titulo">Escolha uma categoria ou
             <a data-dismiss="modal" routerLink="/categoria">cadastre uma nova</a>:
           </label>
-          <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCat'
-            (change)='findByIdCategoria()'>
+          <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCat' (change)='findByIdCategoria()'>
             <option *ngFor='let item of listaCategoria' value="{{item.idCategoria}}">
 
               {{item.tipoProduto}}

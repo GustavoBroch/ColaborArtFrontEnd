@@ -43,6 +43,8 @@ export class InicioComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    window.scroll(0,0)
+    
     if (environment.token == '') {
       this.router.navigate(['/home']);
     }
@@ -117,5 +119,14 @@ export class InicioComponent implements OnInit {
           this.listaProdutos = resp;
         });
     }
+  }
+  sair(){
+    localStorage.clear()
+    environment.token = ""
+    environment.foto = ""
+    environment.id = 0
+    environment.nomeCompleto = "",
+    environment.tipo = ""
+    this.router.navigate(["/home"])
   }
 }

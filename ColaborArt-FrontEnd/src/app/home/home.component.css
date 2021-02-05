@@ -2,7 +2,11 @@
 h3{
   font-family: 'Permanent Marker', Cursive;
 }
-
+.scrolling-wrapper{
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: #333;
+  }
 .anchor {
   display: block;
   height: 35px;

@@ -17,6 +17,7 @@ export class EditProdutoComponent implements OnInit {
   produto: Produto = new Produto()
   categoria: Categoria = new Categoria()
   listaCategoria: Categoria[]
+  
   idCat: number
 
 
@@ -30,8 +31,9 @@ export class EditProdutoComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0)
+
     if (environment.token == '') {
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/home'])
     }
     let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
@@ -45,7 +47,7 @@ export class EditProdutoComponent implements OnInit {
 
   }
 
-  findByIdCategoria(id: number) {
+  findByIdCategoria() {
     this.categoriaService.getByIdCategoria(this.idCat).subscribe((resp: Categoria) => {
       this.categoria = resp
     })
@@ -65,4 +67,14 @@ export class EditProdutoComponent implements OnInit {
       this.router.navigate(['/inicio'])
     })
   }
+
+  tamanhoSelect(event: any) {
+    this.produto.tamanho = event.target.value;
+  }
+
+  disponivelSelect(event: any) {
+    this.produto.disponivel = event.target.value;
+  }
+
+  
 }

@@ -28,8 +28,9 @@ export class ApagarProdutoComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0)
+
     if(environment.token == ''){
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/home'])
     }
    this.idProd = this.route.snapshot.params['id']
     this.findByIdProduto(this.idProd)
