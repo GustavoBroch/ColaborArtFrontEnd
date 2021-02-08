@@ -53,4 +53,22 @@
     Font-Family: 'Overpass', Sans-Serif;
 }
 
+.btn-amarelo-adicionar {
+  background-color:#E8B80E;
+}
+
+.btn-amarelo-adicionar:hover {
+  background-color:#E8DD0C;
+
+}
+
+.btn-laranja-cancelar {
+  background-color: #FF6525;
+  
+}
+
+.btn-laranja-cancelar:hover {
+  background-color:#F27649;
+  
+}
 

@@ -32,3 +32,42 @@ a{
     Font-Family: 'Overpass', Sans-Serif;
 }
 
+
+#fundo {
+    background-color: rgb(15, 15, 15);
+}
+
+
+
+#editar {
+    background-image: url("../../assets/img/cores.png");
+    background-color: rgb(15, 15, 15);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    width: 40%;
+    height: max-content;
+    align-self: top;
+    min-height: 700px;
+
+}
+
+.btn-amarelo-cadastrar {
+  background-color:#E8B80E;
+}
+
+.btn-amarelo-cadastrar:hover {
+  background-color:#E8DD0C;
+
+}
+
+.btn-laranja-cancelar {
+  background-color: #FF6525;
+  
+}
+
+.btn-laranja-cancelar:hover {
+  background-color:#F27649;
+  
+}
