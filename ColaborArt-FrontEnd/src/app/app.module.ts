@@ -21,6 +21,7 @@ import { AlertasComponent } from './alertas/alertas.component';
 import { from } from 'rxjs';
 import { EditProdutoComponent } from './edit-produto/edit-produto.component';
 import { ApagarProdutoComponent } from './apagar-produto/apagar-produto.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ApagarProdutoComponent } from './apagar-produto/apagar-produto.componen
     AlertasComponent,
     EditProdutoComponent,
     ApagarProdutoComponent,
+    CarrinhoComponent,
   ],
   imports: [
     BrowserModule,
