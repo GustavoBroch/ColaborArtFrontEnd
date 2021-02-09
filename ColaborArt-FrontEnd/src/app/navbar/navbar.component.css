@@ -53,13 +53,37 @@ a{
 }
 
 
-.btn-amarelo {
+/* .btn-amarelo {
   background-color: #F2E30C;
-}
+} */
 
-.btn-amarelo:hover {
+/* .btn-amarelo:hover {
   background-color: #F28B0C;
-  color: rgb(14, 12, 12); /* cor do texto */
-  font-weight: bold;
+  color: rgb(14, 12, 12); cor do texto */
+  /* font-weight: bold;
+
+} */
+
+.btn-amarelo-entrar{
+ background-color:#E8B80E
+}
+
+.btn-amarelo-entrar:hover {
+  background-color:#E8DD0C;
+  /* color: rgb(14, 12, 12);
+  font-weight: bold; */
 
 }
+
+.btn-laranja-fechar {
+  background-color: #FF6525;
+  
+}
+
+.btn-laranja-fechar:hover {
+  background-color:#F27649;
+  
+}
+
+
+
