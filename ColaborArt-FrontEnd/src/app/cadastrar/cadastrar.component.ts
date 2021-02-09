@@ -44,8 +44,7 @@ export class CadastrarComponent implements OnInit {
 
         this.router.navigate(['/home']) /* confirmar nome da rota - login/logar ; entrar ; home ; etc */
         this.alertas.showAlertSuccess('Cliente cadastrado com sucesso !')
-      }
-      )
+      })
     }
   }
 }
