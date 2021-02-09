@@ -56,4 +56,37 @@
     height: 100%;
       
 }
+.form-group{
+  position: relative;
+}
+.form-group input{
+  padding-left: 40px;
+}
 
+input:invalid + span::before{
+  content: '✘';
+  color: red;
+}
+input:valid + span::before{
+  content: "✓";
+  color:green;
+
+}
+.form-group span{
+  position: absolute;
+  left: 10px;
+  top: 40px;
+}
+
+input:invalid{
+border-color: red;
+}
+
+input:valid{
+  border-color: green;
+  
+}
+
+input:focus{
+  border-color: blue;
+}
