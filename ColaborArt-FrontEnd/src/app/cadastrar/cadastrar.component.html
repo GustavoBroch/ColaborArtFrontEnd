@@ -2,50 +2,64 @@
   <div class="row mt-5">
     <div class="col-md-6" id="img-cad">
     </div>
-   
-    <div class="col-md-6 m-0 font-weight-bold"  id="header" >
+
+    <div class="col-md-6 m-0 font-weight-bold" id="header">
       <div class="row d-flex justify-content-center">
         <div class="col-md-10 mt-5">
-          <h1 class="text-center">Cadastro</h1>
+          <h1 class="text-center titulo">Cadastro</h1>
 
           <form>
-            <div class="form-group">
+            
+            <div class="form-group texto">
               <label for="nome">Nome:</label>
-              <input [(ngModel)]='user.nomeCompleto' type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" placeholder="Nome Completo">
+                <input [(ngModel)]='user.nomeCompleto' type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" placeholder="Nome Completo" required minlength="3" maxlength="255">
+                <span></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group texto">
               <label for="email">Email:</label>
-              <input [(ngModel)]='user.email' type="text" class="form-control" id="email" name="email" placeholder="Email">
+              <input [(ngModel)]='user.email' type="email" class="form-control" id="email" name="email"
+                placeholder="Email" required minlength="8" maxlength="255">
+                <span></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group texto">
               <label for="senha">Senha:</label>
-              <input (input)='confirmSenha($event)' type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+              <input (input)='confirmSenha($event)' type="password" class="form-control" id="senha" name="senha"
+                placeholder="Senha" required minlength="5">
+                <span></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group texto">
               <label for="confirmSenha">Confirme sua senha:</label>
-              <input [(ngModel)]='user.senha' type="password" class="form-control" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha">
+              <input [(ngModel)]='user.senha' type="password" class="form-control" id="confirmSenha" name="confirmSenha"
+                placeholder="Confirme sua senha" required>
+                <span></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group texto">
               <label for="cpf">CPF:</label>
-              <input [(ngModel)]='user.cpf' type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF(ex : xxx.xxx.xxx-xx)">
+              <input [(ngModel)]='user.cpf' type="text" class="form-control" id="cpf" name="cpf" 
+                placeholder="CPF(ex : xxx.xxx.xxx-xx)" required>
+                <span></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group texto">
               <label for="numero">CEP:</label>
-              <input [(ngModel)]='user.cep' type="number" class="form-control" id="cep" name="cep" placeholder="CEP(12345678)">
+              <input [(ngModel)]='user.cep' type="number" class="form-control" id="cep" name="cep"
+                placeholder="CEP(12345678)" required >
+                <span></span>
             </div>
 
 
-            <div class="form-group">
+            <div class="form-group texto">
               <label for="foto">Foto do usuário</label>
-              <input [(ngModel)]='user.foto' type="text" class="form-control" id="foto" name="foto" placeholder="Link da foto do usuário">
+              <input [(ngModel)]='user.foto' type="url" class="form-control" id="foto" name="foto"
+                placeholder="Link da foto do usuário" required>
+                <span></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group texto">
               <label for="tipo">Tipo de Usuário:</label>
               <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
                 <option>Selecione um tipo de usuário:</option>
@@ -69,11 +83,11 @@
 
 
         </div>
-        
+
 
       </div>
-      
+
     </div>
-    
+
   </div>
 </div>
