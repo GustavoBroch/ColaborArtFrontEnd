@@ -16,3 +16,15 @@
   background-color:#F27649;
   
 }
+
+#planofundo {
+  background-image: url("/assets/img/maopincel12test.png");
+  background-color: palegoldenrod;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  margin: 0;
+  width: 100%;
+  height: max-content;
+  align-self: top;
+}
