@@ -55,6 +55,7 @@ export class InicioComponent implements OnInit {
 
   getAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+      console.log(resp)
       this.listaProdutos = resp;
     });
   }

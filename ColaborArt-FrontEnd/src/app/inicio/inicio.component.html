@@ -11,11 +11,13 @@
       <li class="nav-item active">
         <a class="nav-link text-warning fonte-texto" href="#">Olá, {{nome}} </a>
       </li>
+      
       <li class="nav-item active mr-3">
-        <a href="#">
+        <a [routerLink]="['/user-edit', idUser]">
           <i class="fa fa-pencil-square-o text-white fs-12" aria-hidden="true"></i>
         </a>
       </li>
+      
       <li class="nav-item active">
         <a class="nav-link text-warning fonte-texto" href="#">Meus Pedidos</a>
       </li>
@@ -222,6 +224,7 @@
             <option value="false">Nao</option>
           </select>
         </div>
+
         <div class="form-group">
           <label for="titulo">Escolha uma categoria ou
             <a data-dismiss="modal" routerLink="/categoria">cadastre uma nova</a>:
@@ -232,14 +235,13 @@
               {{item.tipoProduto}}
             </option>
           </select>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-amarelo-adicionar" (click)='publicar()' data-dismiss="modal">Adicionar</button>
+          <button type="button" class="btn btn-laranja-cancelar" data-dismiss="modal">
+            Cancelar
+          </button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" (click)='publicar()' data-dismiss="modal">Adicionar</button>
-        <button type="button" class="btn btn-dark" data-dismiss="modal">
-          Cancelar
-        </button>
-      </div>
-    </div>
   </div>
 </div>
