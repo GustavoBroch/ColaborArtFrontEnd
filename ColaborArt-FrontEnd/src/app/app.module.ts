@@ -22,6 +22,8 @@ import { from } from 'rxjs';
 import { EditProdutoComponent } from './edit-produto/edit-produto.component';
 import { ApagarProdutoComponent } from './apagar-produto/apagar-produto.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
     EditProdutoComponent,
     ApagarProdutoComponent,
     UserEditComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
