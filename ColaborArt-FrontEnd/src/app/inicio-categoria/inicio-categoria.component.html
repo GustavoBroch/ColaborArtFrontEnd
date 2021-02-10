@@ -1,55 +1,8 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-    <a class="navbar-brand" href="#"><img src="{{foto}}" class="img-fluid rounded-circle borda" width="60px"
-            height="60px" alt="Blank"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação"></button>
-
-    <span class="navbar-toggler-icon"></span>
-
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-        <ul class="navbar-nav m-left align-items-center">
-
-            <li class="nav-item active">
-                <a class="nav-link text-warning fonte-texto" href="#">Olá, {{nome}} </a>
-            </li>
-
-            <li class="nav-item active mr-3">
-                <a href="#">
-                    <i class="fa fa-pencil-square-o text-white fs-12" aria-hidden="true"></i>
-                </a>
-            </li>
-
-            <li class="nav-item active">
-                <a class="nav-link text-warning fonte-texto" href="#">Meus Pedidos</a>
-            </li>
-
-            <li class="nav-item active">
-                <a class="nav-link text-warning fonte-texto" href="#">Fale Conosco</a>
-            </li>
-
-        </ul>
-
-        
-        <ul class="navbar-nav ml-auto d-flex align-items-center">
-
-            <li class="nav-item pl-3">
-                <a class="nav-link fonte-texto font-weight-bold text-warning fs-16" href="#">Sair
-                    <i class="fa fa-sign-out text-white fs-16" aria-hidden="true"></i>
-                </a>
-            </li>
-
-        </ul>
-        >
-    </div>
-</nav> -->
-
-<div class="container-fluid">
+<div class="container-fluid p-0">
 
     <div class="row bg-warning">
 
-        <div class="col-md-12 ">
+        <div class="col-md-12">
 
             <h1 class="mt-4 mb-4 text-center fonte-titulo fs-50">
                 Olá, artista! <p>Seja bem-vindx!</p></h1>
@@ -66,21 +19,104 @@
 </div>
 
 
-<div class="container">
+<div class="container-fluid p-0" id="fundo">
+  <div class="row d-flex align-items-center mx-0">
+    <div class="col-md-6">
 
-    <div class="row mt-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+
+          <h1 class="text-center mb-5 mt-4 text-warning titulo fs-24">Categorias</h1>
+
+          <div class="row d-flex justify-content-center">
+                <h5 class="fs-18 text-center fonte-texto text-white">
+                    Veja aqui todas as categorias já cadastradas e/ou cadastre uma nova:
+                </h5>
+                <div class="col-md-6 mt-3">
+                    <div class="form-group fonte-texto text-warning">
+                        <label>Categoria</label>
+                        <input [(ngModel)]='categoria.tipoProduto' type="text" class="form-control" id="tipoProduto"
+                            placeholder="Ex: Camiseta">
+                    </div>
+
+                    <div class="form-group fonte-texto text-warning">
+                        <label for="descricaoCategoria">Descrição</label>
+                        <textarea [(ngModel)]='categoria.descricaoCategoria' class="form-control"
+                            name="descricaoCategoria" id="descricaoCategoria" rows="3">
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <button (click)='cadastrarCategoria()' class="btn btn-amarelo-cadastrar mr-4">
+                    Cadastrar
+                </button>
+                <button type="submit" class="btn btn-laranja-cancelar text-dark ml-4" routerLink='/inicio'>
+                Cancelar
+              </button>
+            </div>
+        <div class="row d-flex justify-content-center mt-5 text-white">
+        <div class="mb-4 mt-2 text-warning titulo fs-24">
+            <h2>Todas as categorias:</h2>
+        </div>
+        </div>
+        <div class="row mt-3 mb-4 d-flex justify-content-center fonte-texto">
+        <div class="col-md-6">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-warning">Opções</th>
+                            <th scope="col" class="text-warning">Cód. de cadastro</th>
+                            <th scope="col" class="text-warning">Categoria</th>
+                            <th scope="col" class="text-warning">Descrição</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let categoria of listaCategoria'>
+                            <td>
+                                <a [routerLink]="['/apagar-categoria',categoria.idCategoria]">
+                                    <i class="fa fa-trash-o pl-3 text-white fs-14" aria-hidden="true"></i>
+                                </a>
+
+                                <a [routerLink]="['/edit-categoria',categoria.idCategoria]">
+                                    <i class="fa fa-pencil-square-o pl-3 text-white fs-14" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                            <th class="text-center text-white" scope="row">{{categoria.idCategoria}}</th>
+                            <td class="text-white">{{categoria.tipoProduto}}</td>
+                            <td class="text-white">{{categoria.descricaoCategoria}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+        </div>
+      </div>
+
+        </div>
+
+        <div class="col-md-6" id="editar"></div>
+
+  </div>
+
+</div>
+
+
+<!-- <div class="container-fluid">
+
+    <div class="row d-flex align-items-center mt-5">
         <div class="fs-16 text-center fonte-titulo">
             <h2>Categorias:</h2>
         </div>
     </div>
 
 
-    <div class="row d-flex justify-content-center mt-4 mb-5">
-
+    <div class="row d-flex justify-content-center mt-4 mb-5" >
         <div class="col-md-12">
-
             <div class="row d-flex justify-content-center">
-
                 <h5 class="fs-18 text-center fonte-texto">
                     Veja aqui todas as categorias já cadastradas e/ou cadastre uma nova:
                 </h5>
@@ -152,13 +188,8 @@
                 </table>
             </div>
         </div>
+        
 
+    <!-- </div>
 
-
-        <!-- <div class="col-md-6 py-0 d-flex justify-content-center">
-            <img src="https://i.imgur.com/V0ib5r7.png" alt="Mão desenhando" width="500px" height="500px">
-        </div> -->
-
-    </div>
-
-</div>
+</div> -->
