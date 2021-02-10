@@ -138,6 +138,7 @@ export class InicioComponent implements OnInit {
     environment.tipo = ""
     this.router.navigate(["/home"])
   }
+
 }
 
 

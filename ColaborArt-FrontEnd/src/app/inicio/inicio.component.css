@@ -44,12 +44,12 @@
     margin-right: 3em;
 }
 
-.fonte-titulo {
+#fonte-titulo {
     Font-Family: 'Permanent Marker', Cursive;
     Font-Size: 75px;
 }
 
-.fonte-texto {
+#fonte-texto {
     Font-Family: 'Overpass', Sans-Serif;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .bg-produto {
-    background-color: gold;
+    background-color: #ffffe0;
   }
 
 #teste{

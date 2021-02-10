@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Produto } from '../model/Produto';
+import { AlertasService } from '../service/alertas.service';
 import { ProdutoService } from '../service/produto.service';
 
 
@@ -15,17 +17,17 @@ export class HomeComponent implements OnInit {
   
   
   constructor(
-    private produtoService:ProdutoService
+    private produtoService:ProdutoService,
+    private router : Router,
+    private alertas : AlertasService
   ) {}
 
   ngOnInit(){
   window.scroll(0,0)
-  this.getAllProdutos()
   }
 
-  getAllProdutos() {
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
-      this.listaProdutos = resp;
-    });
+  comprarHome(){
+    this.alertas.showAlertDanger('Você precisa estar logado para inserir itens no carrinho')
+        this.router.navigate(['/entrar'])
   }
 }

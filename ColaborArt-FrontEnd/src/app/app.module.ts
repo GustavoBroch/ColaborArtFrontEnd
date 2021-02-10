@@ -14,7 +14,6 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { HttpClientModule} from '@angular/common/http';
 import { InicioComponent } from './inicio/inicio.component';
 import { InicioCategoriaComponent } from './inicio-categoria/inicio-categoria.component'
-import { CategoriaComponent } from './categoria/categoria.component';
 import { EditCategoriaComponent } from './edit-categoria/edit-categoria.component';
 import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.component';
 import { AlertasComponent } from './alertas/alertas.component';
@@ -35,7 +34,6 @@ import { EntrarComponent } from './entrar/entrar.component';
     CadastrarComponent,
     InicioComponent,
     InicioCategoriaComponent,
-    CategoriaComponent,
     EditCategoriaComponent,
     ApagarCategoriaComponent,
     AlertasComponent,

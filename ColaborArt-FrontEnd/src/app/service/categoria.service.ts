@@ -15,9 +15,9 @@ export class CategoriaService {
   constructor(private http: HttpClient) {}
   getAllCategoria(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(
-      'http://localhost:8080/categoria',
-      this.token
-    )
+      'http://localhost:8080/categoria'
+      
+    );
   }
 
   postCategoria(categoria: Categoria): Observable<Categoria> {

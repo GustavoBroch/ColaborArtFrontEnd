@@ -1,7 +1,7 @@
-*{
+/* *{
   margin: 0%;
   padding: 0%;
-}
+} */
 
 h3 {
   font-family: "Permanent Marker", Cursive;
@@ -195,7 +195,7 @@ html {
 }
 
 .bg-produto {
-  background-color: lightyellow;
+  background-color: #ffffe0;
 }
 .card-img-top-1 {
   height: 350px;

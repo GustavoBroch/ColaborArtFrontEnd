@@ -23,13 +23,13 @@
         <a class="nav-link text-warning fonte-texto" href="#">Meus Pedidos</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link text-warning fonte-texto" href="#">Fale Conosco</a>
+        <a class="nav-link text-warning fonte-texto" href="#fale-conosco">Fale Conosco</a>
       </li>
     </ul>
     <!-- Carrinho de compras e logout -->
     <ul class="navbar-nav ml-auto d-flex align-items-center">
       <li id="carrinho-compras" class="nav-item active ml-4">
-        <a routerLink="#" class=" font-weight-bold text-white fs-15">
+        <a routerLink="/carrinho/:id" class=" font-weight-bold text-white fs-15">
           <i class="fa fa-shopping-cart text-white" aria-hidden="true"></i>
         </a>
       </li>
@@ -91,7 +91,7 @@
         href="#meusProdutos" role="tab" aria-controls="nav-meusProdutos" aria-selected="false">
         Meus produtos
       </a>
-      <a class="nav-item nav-link text-dark font-weight-bold fonte-texto" id="nav-produtosCategoria-tab"
+      <a (click)='getAllCategoria()' class="nav-item nav-link text-dark font-weight-bold fonte-texto" id="nav-produtosCategoria-tab"
         data-toggle="tab" href="#produtosCategoria" role="tab" aria-controls="nav-produtosCategoria"
         aria-selected="false">
         Produtos por categoria
@@ -113,8 +113,28 @@
         </div>
       </div>
 
+      <div class="row d-flex justify-content-center">
+  
+        <div class="col-md-3.5 mr-4" *ngFor='let item of listaProdutos'>
+          <div class="card mr-6 bg-produto" style="width: 20rem">
+            <img class="card-img-top-1" src="{{item.urlProduto}}" alt="Imagem de capa do card" />
+            <div class="card-body">
+              <h5 id="fonte_titulo" class="card-title font-weight-bold texto text-center">{{item.nome}}</h5>
+              <p id="fonte" class="card-text text-justify">
+               {{item.descricaoProduto}}
+              </p>
+              <p class="text-capitalize text-center">Tamanho: {{item.tamanho}}</p>
+              <p class="font-weight-bold texto text-center" >Preço: R${{item.valor}}
+              </p>
+              <div class="row mb-3 d-flex justify-content-center texto">
+                <a [routerLink]="['/carrinho', item.idProduto]" class="btn btn-outline-success">Comprar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <div class="card-columns">
+     <!--  <div class="card-columns">
         <div class="card bg-produto" *ngFor='let item of listaProdutos'>
           <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
           <div class="card-body">
@@ -124,12 +144,57 @@
             <small class="text-muted"> Tamanho: {{item.tamanho}}</small>
           </div>
         </div>
+      </div> -->
+    
+
+     <!-- <div class="col-md-3.5"> 
+      <div class="card-columns">
+        <div class="card bg-produto" style="width: 20rem" *ngFor='let item of listaProdutos'>
+          <img class="card-img-top" src="{{item.urlProduto}}" alt="Imagem de capa do card"/>
+          <div class="card-body">
+            <h5 id="fonte_titulo" class="card-title font-weight-bold texto text-center">{{item.nome}}</h5>
+            <p id="fonte" class="card-text text-center">
+              {{item.descricaoProduto}}
+            </p>
+            <p id="fonte" class="text-center text-capitalize">
+              Tamanho:
+              <span>{{item.tamanho}}</span> 
+            </p>
+            <div class="row mb-3 d-flex justify-content-center texto">
+              <a [routerLink]="['/carrinho', item.idProduto]" class="btn btn-outline-success">Comprar</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      
+    </div>  -->
+  </div>
 
     <div class="tab-pane fade" id="meusProdutos" role="tabpanel" aria-labelledby="nav-meusProdutos">
 
-      <div class="card-columns">
+      <div class="row d-flex justify-content-center">
+        
+        <div class="col-md-3.5 mr-4" *ngFor='let item of listaProdutos'>
+          <div class="card mr-6 bg-produto" style="width: 20rem">
+            <img class="card-img-top-1" src="{{item.urlProduto}}" alt="Imagem de capa do card" />
+            <div class="card-body">
+              <h5 id="fonte_titulo" class="card-title font-weight-bold texto text-center">{{item.nome}}</h5>
+              <p id="fonte" class="card-text text-justify">
+               {{item.descricaoProduto}}
+              </p>
+              <p class="text-capitalize text-center">Tamanho: {{item.tamanho}}</p>
+              <p class="font-weight-bold texto text-center" >Preço: R${{item.valor}}
+              </p>
+              <div class="row mb-3 d-flex justify-content-center texto">
+                <a [routerLink]="['/edit-produto', item.idProduto]" class="text-info mr-3">Editar</a>
+              <a [routerLink]="['/apagar-produto', item.idProduto]" class="text-danger">Apagar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="card-columns">
         <div class="card" *ngFor='let item of user.produto'>
           <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
           <div class="card-body">
@@ -144,7 +209,7 @@
 
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="tab-pane fade" id="produtosCategoria" role="tabpanel" aria-labelledby="nav-produtosCategoria">
@@ -162,13 +227,58 @@
         <div class="card" *ngFor='let item of categoria.produto'>
           <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
           <div class="card-body">
+            <h5 id="fonte_titulo" class="card-title font-weight-bold texto text-center">{{item.nome}}</h5>
+            <p id="fonte" class="card-text text-justify">
+             {{item.descricaoProduto}}
+            </p>
+            <p class="text-capitalize text-center">
+              Categoria: {{categoria.tipoProduto}}
+            </p>
+            <p class="text-capitalize text-center">Tamanho: {{item.tamanho}}</p>
+            <p class="font-weight-bold texto text-center" >Preço: R${{item.valor}}
+            </p>
+            <div class="row mb-3 d-flex justify-content-center texto">
+              <a [routerLink]="['/carrinho', item.idProduto]" class="btn btn-outline-success">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="row d-flex justify-content-center">
+  
+        <div class="col-md-3.5 mr-4" *ngFor='let categoria of listaCategoria'>
+          <div class="card mr-6 bg-produto" style="width: 20rem" *ngFor='let item of categoria.produto'>
+            <img class="card-img-top-1" src="{{item.urlProduto}}" alt="Imagem de capa do card" />
+            <div class="card-body">
+              <h5 id="fonte_titulo" class="card-title font-weight-bold texto text-center">{{item.nome}}</h5>
+              <p id="fonte" class="card-text text-justify">
+               {{item.descricaoProduto}}
+              </p>
+              <p class="text-capitalize text-center">
+                Categoria: {{categoria.tipoProduto}}
+              </p>
+              <p class="text-capitalize text-center">Tamanho: {{item.tamanho}}</p>
+              <p class="font-weight-bold texto text-center" >Preço: R${{item.valor}}
+              </p>
+              <div class="row mb-3 d-flex justify-content-center texto">
+                <a [routerLink]="['/carrinho', item.idProduto]" class="btn btn-outline-success">Comprar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="card-columns" *ngFor='let categoria of listaCategoria'> 
+        <div class="card" *ngFor='let item of categoria.produto'>
+          <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
+          <div class="card-body">
             <h5 class="card-title">{{item.nome}}</h5>
             <p class="card-text">R${{item.valor}}</p>
             <small class="text-muted"> Categoria: {{categoria.tipoProduto}}</small>
             <small class="text-muted"> Tamanho: {{item.tamanho}}</small>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
 
