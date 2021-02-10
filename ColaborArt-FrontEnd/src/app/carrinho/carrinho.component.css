@@ -1,0 +1,28 @@
+#planofundo {
+  background-image: url("../../assets/img/20.png") !important;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  margin: 0;
+  width: 100%;
+  height: 950px;
+  align-self: top;
+}
+.btn-amarelo-cadastrar {
+    background-color:#E8B80E;
+  }
+  
+  .btn-amarelo-cadastrar:hover {
+    background-color:#E8DD0C;
+  
+  }
+  
+  .btn-laranja-cancelar {
+    background-color: #FF6525;
+    
+  }
+  
+  .btn-laranja-cancelar:hover {
+    background-color:#F27649;
+    
+  }

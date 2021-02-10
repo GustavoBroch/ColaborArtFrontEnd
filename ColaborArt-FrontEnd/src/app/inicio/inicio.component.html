@@ -2,15 +2,15 @@
 <!-- Nav -->
 <div class="container-fluid px-0">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"><img src="{{foto}}" class="img-fluid rounded-circle borda" width="60px" height="60px"
-      alt="Blank"></a>
+  <a class="navbar-brand" (click)='sair()' routerLink= "/home"><img src="{{foto}}" class="img-fluid rounded-circle borda" width="60px" height="60px"
+      alt="Foto"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação"></button>
   <span class="navbar-toggler-icon"></span>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav m-left align-items-center">
       <li class="nav-item active">
-        <a class="nav-link text-warning fonte-texto" href="#">Olá, {{nome}} </a>
+        <a class="nav-link text-warning fonte-texto" (click)='sair()' routerLink= "/home">Olá, {{nome}} </a>
       </li>
       
       <li class="nav-item active mr-3">
@@ -20,7 +20,7 @@
       </li>
       
       <li class="nav-item active">
-        <a class="nav-link text-warning fonte-texto" href="#">Meus Pedidos</a>
+        <a class="nav-link text-warning fonte-texto" (click)='sair()' routerLink= "/home">Meus Pedidos</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link text-warning fonte-texto" href="#fale-conosco">Fale Conosco</a>
@@ -54,13 +54,13 @@
 
       <div class="row d-flex justify-content-center bg-text-dark">
         <div class="col-md-12">
-          <h1 class="fs-54 fonte-titulo text-warning text-center">Seja bem-vindx!</h1>
-          <h5 class="fs-19 fonte-texto text-light text-center">Conheça nossos produtos: ColaborArt-se!</h5>
+          <h1 class="fs-54 titulo text-warning text-center">Seja bem-vindx!</h1>
+          <h5 class="fs-19 texto text-light text-center">Conheça nossos produtos: ColaborArt-se!</h5>
         </div>
       </div>
       <div class="row d-flex justify-content-center mt-3 mb-5">
         <div class="col-md-6">
-          <a class="btn btn-success mt-4 mr-4 fonte-texto" href="#produtos">Ver produto</a>
+          <a class="btn btn-success mt-4 mr-4 texto" href="#produtos">Ver produto</a>
           <button *ngIf='authService.artista()' class="btn btn-success mt-4 fonte-texto" data-toggle="modal"
             data-target="#novoProduto">Novo
             produto</button>
@@ -70,10 +70,6 @@
 
     <div class="col-md-6 d-flex justify-content-center">
       <img class="p-0" src="../../assets/img/maopincel10.png" alt="" id="teste">
-      <!-- <img src="https://i.imgur.com/SMArFIP.gif" alt="" width="500px" height="500px" /> -->
-      <!-- <video width="500px" height="500px" autoplay loop>
-        <source src="https://i.imgur.com/5L18w1V.mp4" type="video/mp4">
-    </video> -->
     </div>
   </div>
 </div>
@@ -133,48 +129,13 @@
           </div>
         </div>
       </div>
-
-     <!--  <div class="card-columns">
-        <div class="card bg-produto" *ngFor='let item of listaProdutos'>
-          <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">{{item.nome}}</h5>
-            <p class="card-text">R${{item.valor}}</p>
-            <small class="text-muted"> Descrição: {{item.categoria.descricaoCategoria}}</small>
-            <small class="text-muted"> Tamanho: {{item.tamanho}}</small>
-          </div>
-        </div>
-      </div> -->
-    
-
-     <!-- <div class="col-md-3.5"> 
-      <div class="card-columns">
-        <div class="card bg-produto" style="width: 20rem" *ngFor='let item of listaProdutos'>
-          <img class="card-img-top" src="{{item.urlProduto}}" alt="Imagem de capa do card"/>
-          <div class="card-body">
-            <h5 id="fonte_titulo" class="card-title font-weight-bold texto text-center">{{item.nome}}</h5>
-            <p id="fonte" class="card-text text-center">
-              {{item.descricaoProduto}}
-            </p>
-            <p id="fonte" class="text-center text-capitalize">
-              Tamanho:
-              <span>{{item.tamanho}}</span> 
-            </p>
-            <div class="row mb-3 d-flex justify-content-center texto">
-              <a [routerLink]="['/carrinho', item.idProduto]" class="btn btn-outline-success">Comprar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>  -->
   </div>
 
     <div class="tab-pane fade" id="meusProdutos" role="tabpanel" aria-labelledby="nav-meusProdutos">
 
       <div class="row d-flex justify-content-center">
         
-        <div class="col-md-3.5 mr-4" *ngFor='let item of listaProdutos'>
+        <div class="col-md-3.5 mr-4" *ngFor='let item of user.produto'>
           <div class="card mr-6 bg-produto" style="width: 20rem">
             <img class="card-img-top-1" src="{{item.urlProduto}}" alt="Imagem de capa do card" />
             <div class="card-body">
@@ -193,23 +154,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="card-columns">
-        <div class="card" *ngFor='let item of user.produto'>
-          <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">{{item.nome}}</h5>
-            <p class="card-text">R${{item.valor}}</p>
-            <small class="text-muted"> Descrição: {{item.categoria.descricaoCategoria}}</small>
-            <small class="text-muted"> Tamanho: {{item.tamanho}}</small>
-            <div>
-              <a [routerLink]="['/edit-produto', item.idProduto]" class="text-info mr-3">Editar</a>
-              <a [routerLink]="['/apagar-produto', item.idProduto]" class="text-danger">Apagar</a>
-            </div>
-
-          </div>
-        </div>
-      </div> -->
     </div>
 
     <div class="tab-pane fade" id="produtosCategoria" role="tabpanel" aria-labelledby="nav-produtosCategoria">
@@ -243,45 +187,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="row d-flex justify-content-center">
-  
-        <div class="col-md-3.5 mr-4" *ngFor='let categoria of listaCategoria'>
-          <div class="card mr-6 bg-produto" style="width: 20rem" *ngFor='let item of categoria.produto'>
-            <img class="card-img-top-1" src="{{item.urlProduto}}" alt="Imagem de capa do card" />
-            <div class="card-body">
-              <h5 id="fonte_titulo" class="card-title font-weight-bold texto text-center">{{item.nome}}</h5>
-              <p id="fonte" class="card-text text-justify">
-               {{item.descricaoProduto}}
-              </p>
-              <p class="text-capitalize text-center">
-                Categoria: {{categoria.tipoProduto}}
-              </p>
-              <p class="text-capitalize text-center">Tamanho: {{item.tamanho}}</p>
-              <p class="font-weight-bold texto text-center" >Preço: R${{item.valor}}
-              </p>
-              <div class="row mb-3 d-flex justify-content-center texto">
-                <a [routerLink]="['/carrinho', item.idProduto]" class="btn btn-outline-success">Comprar</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- <div class="card-columns" *ngFor='let categoria of listaCategoria'> 
-        <div class="card" *ngFor='let item of categoria.produto'>
-          <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">{{item.nome}}</h5>
-            <p class="card-text">R${{item.valor}}</p>
-            <small class="text-muted"> Categoria: {{categoria.tipoProduto}}</small>
-            <small class="text-muted"> Tamanho: {{item.tamanho}}</small>
-          </div>
-        </div>
-      </div> -->
-
-
-
     </div>
   </div>
 </div>

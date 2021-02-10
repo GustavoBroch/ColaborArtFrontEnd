@@ -1,0 +1,35 @@
+<div id="planofundo">
+  <div class="container mb-5">
+    <h1 class="titulo text-center mb-5">Minhas Compras</h1>
+    
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-3.5 mr-4">
+          <div class="card mr-6 bg-produto" style="width: 20rem">
+            <img class="card-img-top-1" src="{{produto.urlProduto}}" alt="Imagem de capa do card" />
+            <div class="card-body">
+              <h5 id="fonte_titulo" class="card-title font-weight-bold texto text-center">{{produto.nome}}</h5>
+              <p id="fonte" class="card-text text-justify">
+                {{produto.descricaoProduto}}
+              </p>
+              <p class="text-capitalize text-center">Tamanho: {{produto.tamanho}}</p>
+              <p class="font-weight-bold texto text-center">Preço Unitário:  R${{produto.valor}}
+              </p>
+              <p class="text-center">Quantidade:</p>
+              <div class="row justify-content-center">
+                <button (click)='mais()' class="btn btn-sm btn-success">+</button>
+              <input  class= "mx-1" type="text" [(ngModel)]='qtd'>
+              <button (click)='menos()' class="btn btn-sm btn-danger">-</button>
+              </div>
+              <p class="font-weight-bold texto text-center mt-5">Preço Total:  R${{qtd* produto.valor}}
+              </p>
+              <div class="row mb-3 d-flex justify-content-center texto">
+                <a (click)="comprar()"class="btn btn-amarelo-cadastrar">Comprar</a>
+                <a routerLink ="/inicio"class="btn btn-laranja-cancelar text-dark ml-4">Voltar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
