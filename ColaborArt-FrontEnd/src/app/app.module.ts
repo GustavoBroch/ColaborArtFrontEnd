@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-// import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 
@@ -50,7 +50,10 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     FormsModule,
     ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [{
+    provide:LocationStrategy,
+    useClass:HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
