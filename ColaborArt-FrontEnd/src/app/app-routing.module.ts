@@ -9,6 +9,7 @@ import { ApagarCategoriaComponent } from './apagar-categoria/apagar-categoria.co
 import { EditProdutoComponent } from './edit-produto/edit-produto.component';
 import { ApagarProdutoComponent } from './apagar-produto/apagar-produto.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { EntrarComponent } from './entrar/entrar.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'home', pathMatch:'full'},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'apagar-categoria/:id', component:ApagarCategoriaComponent},
   {path: 'edit-produto/:id', component:EditProdutoComponent},
   {path: 'apagar-produto/:id', component:ApagarProdutoComponent},
-  {path: 'user-edit/:id', component: UserEditComponent}
+  {path: 'user-edit/:id', component: UserEditComponent},
+  {path: 'entrar', component: EntrarComponent}
 
 ];
 

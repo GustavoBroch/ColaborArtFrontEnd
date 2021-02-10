@@ -17,8 +17,8 @@ Font-Family: 'Overpass', Sans-Serif;
 
 html {
      scroll-behavior: smooth;
-     max-width: 100% !important;
-     width: 100vw;
+     margin: 0;
+     padding: 0;
 }
 
 /* Font-Size: 55px; */
