@@ -9,7 +9,7 @@ import { Categoria } from '../model/Categoria';
 })
 export class CategoriaService {
   
-  token = { headers: new HttpHeaders().set('Authorization', localStorage.getItem('token')),
+  token = { headers: new HttpHeaders().set('Authorization', localStorage.getItem('token'))
   }
 
   constructor(private http: HttpClient) {}
