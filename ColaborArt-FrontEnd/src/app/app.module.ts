@@ -23,6 +23,7 @@ import { EditProdutoComponent } from './edit-produto/edit-produto.component';
 import { ApagarProdutoComponent } from './apagar-produto/apagar-produto.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { EntrarComponent } from './entrar/entrar.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     EditProdutoComponent,
     ApagarProdutoComponent,
     UserEditComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    EntrarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,8 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
 h3 {
   font-family: "Permanent Marker", Cursive;
 
@@ -7,6 +12,7 @@ h3 {
   white-space: nowrap;
   background-color: #333;
   }
+
 .anchor {
   display: block;
   height: 35px;
@@ -28,7 +34,7 @@ h3 {
   background-position: center;
   margin: 0;
   width: 100%;
-  height: 950px;
+  height: 900px;
   align-self: top;
 }
 
@@ -157,4 +163,24 @@ html {
     background-position-x: center;
     margin: 3rem 0;
     width: max-content;
+} */
+
+.mr-8 {
+  margin-right: 8pc;
+}
+
+.mr-10 {
+  margin-right: 10pc;
+}
+
+.bg-card {
+  background-color: #fbede0;
+}
+
+.bg-produto {
+  background-color: gold;
+}
+
+/* .card-img-top-1{
+  height: 30px;
 } */
