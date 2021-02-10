@@ -1,0 +1,42 @@
+#imagem{
+  background-image: url("../../assets/img/bg-meninos.jpg");
+  min-height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+
+#fundo-entrar {
+    background-image: url("../../assets/img/testeCad.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 700px;
+}
+
+.btn-amarelo-entrar {
+  background-color:#E8B80E;
+}
+
+.btn-amarelo-entrar:hover {
+  background-color:#E8DD0C;
+
+}
+
+.btn-laranja-fechar {
+  background-color: #FF6525;
+  
+}
+
+.btn-laranja-fechar:hover {
+  background-color:#F27649;
+  
+}
+
+
+.fonte{
+  font-size: 38px;
+}
