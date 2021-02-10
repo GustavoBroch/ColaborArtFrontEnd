@@ -36,7 +36,7 @@ color: #0072b1;
 
 /***** Footer *****/
 
-.footer-top { padding: 55px 0; background: #333; text-align: left; color: #aaa; }
+.footer-top { padding: 55px 0; background: rgb(0, 0, 0); text-align: left; color: rgb(170, 170, 170); }
 .footer-top h3 { padding-bottom: 10px; color: #fff; }
 
 .footer-about img.logo-footer { max-width: 150px; margin-top: 10px; margin-bottom: 18px; }
@@ -49,7 +49,7 @@ color: #0072b1;
 .footer-contact p a:hover, .footer-contact p a:focus { border: 0; }
 
 .footer-links a { color: #aaa; border: 0; }
-.footer-links a:hover, .footer-links a:focus { color: #fff; }
+.footer-links a:hover, .footer-links a:focus { color: rgb(255, 128, 9); }
 
 .footer-bottom { padding: 15px 0 17px 0; background: #444; text-align: left; color: #aaa; }
 
@@ -58,7 +58,7 @@ color: #0072b1;
 .footer-social a:hover, .footer-social a:focus { color: #79a05f; border: 0; }
 .footer-social i { font-size: 24px; vertical-align: middle; }
 
-.footer-copyright { padding-top: 5px; }
+.footer-copyright { padding-top: 5px; margin:0px;}
 .footer-copyright a { color: #fff; border: 0; }
 .footer-copyright a:hover, .footer-copyright a:focus { color: #aaa; border: 0; }
 
@@ -70,7 +70,7 @@ color: #0072b1;
 .fonte {
     font-size: 13pt;
 }
-
+/* 
 .fa-facebook-square:hover{
     color: #3b5998;
 } 
@@ -94,4 +94,4 @@ color: #C13584;
 
 .fa-linkedin-square:hover{
 color: #0072b1;
-} 
+}  */

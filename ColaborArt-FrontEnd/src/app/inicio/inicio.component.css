@@ -3,6 +3,11 @@
     font-size: 52pt;
 }
 
+
+.fs-15 {
+    font-size: 15pt;
+}
+
 .fs-17 {
     font-size: 17pt;
 }
@@ -39,12 +44,6 @@
     margin-right: 3em;
 }
 
-.fundo-geral {
-    background-color: palegoldenrod;
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
 .fonte-titulo {
     Font-Family: 'Permanent Marker', Cursive;
     Font-Size: 75px;
@@ -73,3 +72,6 @@
   
 }
 
+.bg-produto {
+    background-color: gold;
+  }

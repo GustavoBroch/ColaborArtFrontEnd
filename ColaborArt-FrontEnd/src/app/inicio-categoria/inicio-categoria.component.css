@@ -22,6 +22,7 @@ a{
     background-color: palegoldenrod;
     background-repeat: no-repeat;
     background-size: 100%;
+    margin: 0px;
 }
 
 .fonte-titulo {
@@ -35,6 +36,7 @@ a{
 
 #fundo {
     background-color: rgb(15, 15, 15);
+    margin: 0px;
 }
 
 
@@ -45,7 +47,7 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin: 0;
+    margin: 0px;
     width: 40%;
     height: max-content;
     align-self: top;
@@ -70,4 +72,8 @@ a{
 .btn-laranja-cancelar:hover {
   background-color:#F27649;
   
+}
+
+.inline{
+    min-width:500px;
 }

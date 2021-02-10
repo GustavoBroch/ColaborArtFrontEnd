@@ -32,16 +32,16 @@
                 <h5 class="fs-18 text-center fonte-texto text-white">
                     Veja aqui todas as categorias já cadastradas e/ou cadastre uma nova:
                 </h5>
-                <div class="col-md-6 mt-3">
+                <div class="col-md-0 mt-3">
                     <div class="form-group fonte-texto text-warning">
                         <label>Categoria</label>
                         <input [(ngModel)]='categoria.tipoProduto' type="text" class="form-control" id="tipoProduto"
-                            placeholder="Ex: Camiseta">
+                            placeholder="Ex.: Camiseta">
                     </div>
 
                     <div class="form-group fonte-texto text-warning">
                         <label for="descricaoCategoria">Descrição</label>
-                        <textarea [(ngModel)]='categoria.descricaoCategoria' class="form-control"
+                        <textarea [(ngModel)]='categoria.descricaoCategoria' class="form-control inline"
                             name="descricaoCategoria" id="descricaoCategoria" rows="3">
                         </textarea>
                     </div>
@@ -61,15 +61,15 @@
         </div>
         </div>
         <div class="row mt-3 mb-4 d-flex justify-content-center fonte-texto">
-        <div class="col-md-6">
-            <div class="table-responsive">
+        <div class="col-md-0">
+            <div class="table">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col" class="text-warning">Opções</th>
-                            <th scope="col" class="text-warning">Cód. de cadastro</th>
-                            <th scope="col" class="text-warning">Categoria</th>
-                            <th scope="col" class="text-warning">Descrição</th>
+                            <th scope="col" class="text-warning text-center">Opções</th>
+                            <th scope="col" class="text-warning text-center">Código</th>
+                            <th scope="col" class="text-warning text-center">Categoria</th>
+                            <th scope="col" class="text-warning text-center">Descrição</th>
 
                         </tr>
                     </thead>
