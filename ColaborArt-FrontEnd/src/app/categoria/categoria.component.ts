@@ -29,7 +29,7 @@ export class CategoriaComponent implements OnInit {
   this.findAllCategoria()
   }
   findAllCategoria(){
-this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+  this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
   this.listaCategoria=resp
 })
   }

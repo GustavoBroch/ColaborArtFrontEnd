@@ -32,13 +32,13 @@ export class InicioCategoriaComponent implements OnInit {
   }
 
   findAllCategorias(){
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
       this.listaCategoria = resp
     })
   }
 
-  cadastrarCategoria(){
-    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
+    cadastrarCategoria(){
+      this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
       this.categoria = resp
       this.alertas.showAlertSuccess('Categoria cadastrada com sucesso!')
       this.findAllCategorias()
