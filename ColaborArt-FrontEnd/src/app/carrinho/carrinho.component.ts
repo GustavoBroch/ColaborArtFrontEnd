@@ -14,7 +14,7 @@ import { ProdutoService } from '../service/produto.service';
 export class CarrinhoComponent implements OnInit {
 
   produto : Produto = new Produto()
-  qtd: number = 0
+  qtd: number = 1
   constructor(private router : Router,
     private alertas : AlertasService,
     private route : ActivatedRoute,
@@ -45,9 +45,13 @@ menos(){this.qtd  = this.qtd -1}
 
 
 comprar(){
-  this.alertas.showAlertSuccess('Pedido de compra efetuado com sucesso -- Obrigado pela colaboraçao! ')
+  this.alertas.showAlertSuccess('Pedido de compra efetuado com sucesso , em breve voce recebera um email confirmando seu pedido -- Obrigado pela colaboraçao! ')
+  this.router.navigate(['/inicio'])
 }
-
+voltar(){
+  this.router.navigate(["/inicio"])
+ // environment. = ''
+}
 
 }
 
