@@ -7,6 +7,7 @@ h3 {
   white-space: nowrap;
   background-color: #333;
   }
+
 .anchor {
   display: block;
   height: 35px;
@@ -24,9 +25,10 @@ h3 {
   background-image: url("../../assets/img/icone3.png");
   background-color: palegoldenrod;
   background-repeat: no-repeat;
-  background-size: 100%;
+  /* background-size: 100%; */
   background-position: center;
-  margin: 0;
+  background-size: cover;
+  margin: 0px;
   width: 100%;
   height: 950px;
   align-self: top;
@@ -51,13 +53,15 @@ h3 {
 .carousel-control-next-icon:after {
   content: ">";
   font-size: 55px;
-  color: black;
+  color: rgb(55, 0, 182);
+  font-weight: 700;
 }
 
 .carousel-control-prev-icon:after {
   content: "<";
   font-size: 55px;
-  color: black;
+  color:rgb(55, 0, 182);
+  font-weight: 700;
 }
 
 .strong {
@@ -129,8 +133,19 @@ html {
 }
 
 
+.mr-6 {
+  margin-right: 6pc;
+}
 
+.mr-8 {
 
+  margin-right: 8pc;
+}
+
+.mr-10 {
+
+  margin-right: 10pc;
+}
 
 .nodes {
     background-image: url("../../assets/img/testeTexto.png");
@@ -149,6 +164,9 @@ html {
   margin: 3rem 0;
 }
 
+.bg-card {
+  background-color: #fbede0;
+}
 /* .teste {
     background-image: url("../../assets/img/teste2Texto.png");
     height: max-content;
@@ -158,3 +176,11 @@ html {
     margin: 3rem 0;
     width: max-content;
 } */
+
+.bg-produto {
+  background-color: gold;
+}
+
+.card-img-top-1 {
+  height: 350px;
+}

@@ -14,7 +14,7 @@
       
       <li class="nav-item active mr-3">
         <a [routerLink]="['/user-edit', idUser]">
-          <i class="fa fa-pencil-square-o text-white fs-12" aria-hidden="true"></i>
+          <i class="fa fa-pencil-square-o text-white fs-14" aria-hidden="true"></i>
         </a>
       </li>
       
@@ -28,12 +28,12 @@
     <!-- Carrinho de compras e logout -->
     <ul class="navbar-nav ml-auto d-flex align-items-center">
       <li id="carrinho-compras" class="nav-item active ml-4">
-        <a routerLink="#" class=" font-weight-bold text-white fs-16">
+        <a routerLink="#" class=" font-weight-bold text-white fs-15">
           <i class="fa fa-shopping-cart text-white" aria-hidden="true"></i>
         </a>
       </li>
       <li class="nav-item pl-3">
-        <a class="nav-link fonte-texto font-weight-bold text-warning fs-16" href="#">Sair
+        <a class="nav-link fonte-texto font-weight-bold text-warning fs-15" href="#">Sair
           <i class="fa fa-sign-out text-white fs-16" aria-hidden="true"></i>
         </a>
       </li>
@@ -76,7 +76,7 @@
 </div>
 <!--/Bem-vindo-->
 <!-- Produtos -->
-<div class="container mt-5 mb-5 fundo-geral" id="produtos">
+<div class="container mt-5 mb-5" id="produtos">
   <nav>
     <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
       <a class="nav-item nav-link active text-dark font-weight-bold fonte-texto" id="nav-todosProdutos-tab"
@@ -112,7 +112,7 @@
 
 
       <div class="card-columns">
-        <div class="card" *ngFor='let item of listaProdutos'>
+        <div class="card bg-produto" *ngFor='let item of listaProdutos'>
           <img class="card-img-top" height="300px" src="{{item.urlProduto}}" alt="Imagem de capa do card">
           <div class="card-body">
             <h5 class="card-title">{{item.nome}}</h5>
@@ -135,8 +135,8 @@
             <small class="text-muted"> Descrição: {{item.categoria.descricaoCategoria}}</small>
             <small class="text-muted"> Tamanho: {{item.tamanho}}</small>
             <div>
-              <a [routerLink]="['/edit-produto', item.idProduto]" class="text-info mr-3" href="">Editar</a>
-              <a [routerLink]="['/apagar-produto', item.idProduto]" class="text-danger" href="">Apagar</a>
+              <a [routerLink]="['/edit-produto', item.idProduto]" class="text-info mr-3">Editar</a>
+              <a [routerLink]="['/apagar-produto', item.idProduto]" class="text-danger">Apagar</a>
             </div>
 
           </div>
@@ -207,6 +207,7 @@
             <a data-dismiss="modal" routerLink="/categoria" class="ml-3"></a>
           </label>
           <select (change)='tamanhoSelect($event)' name="tamanho" id="tamanho" class="form-control">
+            <option value="true">--- Selecione ---</option>
             <option value="p">P</option>
             <option value="m">M</option>
             <option value="g">G</option>
@@ -220,6 +221,7 @@
             <a data-dismiss="modal" routerLink="/categoria"></a>
           </label>
           <select (change)='disponivelSelect($event)' name="disponivel" id="disponivel" class="form-control">
+            <option value="true">--- Selecione ---</option>
             <option value="true">Sim</option>
             <option value="false">Nao</option>
           </select>

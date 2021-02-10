@@ -55,30 +55,30 @@
 <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
 
-        <div class="modal-content" id="entrar-modal">
+        <div class="modal-content titulo" id="entrar-modal">
             <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">Entrar</h5>
+                <h5 class="modal-title titulo" id="TituloModalCentralizado">Entrar</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <label for="usuario">Email:</label>
-                    <input [(ngModel)]='userLogin.email' class="form-control" type="text" name="usuario1" id="usuario1" placeholder="Digite seu email">
+                <div class="form-group texto">
+                    <label for="usuario">E-mail:</label>
+                    <input [(ngModel)]='userLogin.email' class="form-control" type="text" name="usuario1" id="usuario1" placeholder="Digite seu e-mail">
                 </div>
-                <div class="form-group">
+                <div class="form-group texto">
                     <label for="senha">Senha:</label>
                     <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" placeholder="Digite sua senha">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group texto">
                     <p class="text-center">Não tem uma conta?
-                        <a routerLink="/cadastrar" data-dismiss="modal">Cadastre-se</a>
+                        <a routerLink="/cadastrar" data-dismiss="modal">Cadastre-se.</a>
                     </p>
                 </div>
             </div>
-            <div class="modal-footer d-flex justify-content-center">
+            <div class="modal-footer d-flex justify-content-center texto">
 
                 <button (click)='entrar()' type="submit" class="btn btn-amarelo-entrar" data-dismiss="modal">Entrar</button>
 
@@ -95,7 +95,7 @@
 
         <div class="modal-content" id="entrar-modal">
             <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">Entre em contato conosco</h5>
+                <h5 class="modal-title titulo" id="TituloModalCentralizado">Entre em contato conosco!</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -103,13 +103,13 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="usuario">Nome:</label>
-                    <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Digite seu nome ">
+                    <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Digite seu nome">
 
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input class="form-control" type="text" name="email" id="email" placeholder="Digite seu email">
+                    <label for="email">E-mail:</label>
+                    <input class="form-control" type="text" name="email" id="email" placeholder="Digite seu e-mail">
 
                 </div>
 
@@ -131,7 +131,7 @@
                     <textarea class="form-control" name="texto" id="texto" rows="4"></textarea>
                 </div>
             </div>
-            <div class="modal-footer d-flex justify-content-center">
+            <div class="modal-footer d-flex justify-content-center texto">
                 <button (click)='atualizar()' type="submit" class="btn btn-amarelo-entrar" data-dismiss="modal">Enviar</button>
 
                 <button type="button" class="btn btn-laranja-fechar mr-3" data-dismiss="modal">Fechar</button>
